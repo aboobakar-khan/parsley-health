@@ -1,0 +1,90 @@
+[
+  {
+    "id": "gut",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F9d0236221c98463fb1acf179cbf0777a?width=256&quality=75&format=webp",
+    "title": "Gut & Digestive Health",
+    "detail": "IBS, IBD, acid reflux, SIBO, leaky gut, constipation, diarrhea, food intolerances, bloating, gas",
+    "cta": "Gut health care",
+    "href": "/care/conditions/gut-digestive-health"
+  },
+  {
+    "id": "hormones",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F049e58f7a5234a10a84bae75d89c8d58?width=256&quality=75&format=webp",
+    "title": "Hormone Health & Balance",
+    "detail": "Fatigue, weight changes, PMS, acne, irregular cycles, hair loss, insulin resistance, PCOS, PMOS",
+    "cta": "Hormone health care",
+    "href": "/care/conditions/hormone-health"
+  },
+  {
+    "id": "autoimmune",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fb97c5c4260604b3c9a36a478552e3217?width=256&quality=75&format=webp",
+    "title": "Autoimmune & Inflammation",
+    "detail": "Crohn’s disease, Hashimoto’s, lupus, psoriasis, rheumatoid arthritis, ulcerative colitis, joint pain",
+    "cta": "Autoimmune care",
+    "href": "/care/conditions/autoimmune"
+  },
+  {
+    "id": "unexplained",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Faea01a1ddf414c76a0b1e898ccd9b824?width=256&quality=75&format=webp",
+    "title": "Unexplained Symptoms",
+    "detail": "Allergic reactions, anxiety, bloating, brain fog, fatigue, headaches, insomnia, joint pain, low mood, skin rashes",
+    "cta": "Unexplained symptoms care",
+    "href": "/care/conditions/unexplained-symptoms"
+  },
+  {
+    "id": "mental",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F934f3ca4d2e74da084a4ec484e5a95ad?width=256&quality=75&format=webp",
+    "title": "Mental & Emotional Health",
+    "detail": "Agitation, anxiety, brain fog, changes in appetite or weight, difficulty concentrating, fatigue, feeling hopeless, insomnia, irritability",
+    "cta": "Mental health care",
+    "href": "/care/conditions/mental-health"
+  },
+  {
+    "id": "heart",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fdc8a846c2ca7453d86e927517c24f4e7?width=256&quality=75&format=webp",
+    "title": "Heart Health",
+    "detail": "High cholesterol, hypertension, family history of heart disease, elevated inflammation markers, cardiovascular risk assessment",
+    "cta": "Heart health care",
+    "href": "/care/conditions/heart-health"
+  },
+  {
+    "id": "metabolic",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fa3eb2d0aa5c54c3080fa54005ae65463?width=256&quality=75&format=webp",
+    "title": "Metabolic Health",
+    "detail": "Weight gain or resistance, insulin resistance, prediabetes, type 2 diabetes, metabolic syndrome, GLP-1 support, unexplained fatigue",
+    "cta": "Metabolic health care",
+    "href": "/care/conditions/metabolic-health"
+  },
+  {
+    "id": "longevity",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F9d0236221c98463fb1acf179cbf0777a?width=256&quality=75&format=webp",
+    "title": "Longevity & Healthspan",
+    "detail": "Blood sugar imbalance, bone density, disease prevention, heart health, memory changes, muscle loss, sleep issues",
+    "cta": "Longevity care",
+    "href": "/care/conditions/longevity"
+  },
+  {
+    "id": "perimenopause",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F049e58f7a5234a10a84bae75d89c8d58?width=256&quality=75&format=webp",
+    "title": "Perimenopause & Menopause",
+    "detail": "Hot flashes, low libido, memory issues, mood swings, night sweats, sleep disturbances, weight changes, vaginal dryness",
+    "cta": "Perimenopause care",
+    "href": "/care/conditions/perimenopause"
+  },
+  {
+    "id": "fertility",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fb97c5c4260604b3c9a36a478552e3217?width=256&quality=75&format=webp",
+    "title": "Fertility, Pregnancy, & Postpartum",
+    "detail": "Anemia, gestational diabetes, irregular periods, PMOS/PCOS, PMS, postpartum recovery",
+    "cta": "Fertility care",
+    "href": "/care/conditions/fertility"
+  },
+  {
+    "id": "detox",
+    "image": "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Faea01a1ddf414c76a0b1e898ccd9b824?width=256&quality=75&format=webp",
+    "title": "Detox & Environmental Exposure",
+    "detail": "Mold exposure, chemical sensitivity, mercury and heavy metals poisoning, chronic fatigue, headaches",
+    "cta": "Detox care",
+    "href": "/care/conditions/detox"
+  }
+]

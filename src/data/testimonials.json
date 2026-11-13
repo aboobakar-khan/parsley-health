@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "quote": "I've tried every method, doctor, and diet. Nothing has compared to the incredible care at Parsley that has made a massive difference in my healing after 10+ years of struggling.",
+    "author": "Sarah M.",
+    "location": "New York, NY",
+    "stars": 5
+  },
+  {
+    "id": 2,
+    "quote": "Completely changed my physical and mental health. For the first time, I have a doctor who takes the time to understand my history and actually listens.",
+    "author": "James K.",
+    "location": "Los Angeles, CA",
+    "stars": 5
+  },
+  {
+    "id": 3,
+    "quote": "I started getting answers through extensive testing. Wow — I might actually be able to fix this problem I've dealt with my whole life.",
+    "author": "Priya T.",
+    "location": "San Francisco, CA",
+    "stars": 5
+  },
+  {
+    "id": 4,
+    "quote": "The whole practice is unique, revolutionary — more of what we need in health care versus just sick care.",
+    "author": "Rebecca L.",
+    "location": "Chicago, IL",
+    "stars": 5
+  },
+  {
+    "id": 5,
+    "quote": "They don't just put a band-aid on a symptom. They dig deeper and address root causes with real solutions.",
+    "author": "Michael D.",
+    "location": "Austin, TX",
+    "stars": 5
+  },
+  {
+    "id": 6,
+    "quote": "After years of being dismissed by traditional medicine, I finally got real answers and a care plan that works.",
+    "author": "Anna R.",
+    "location": "Boston, MA",
+    "stars": 5
+  }
+]

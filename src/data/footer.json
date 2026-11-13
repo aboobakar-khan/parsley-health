@@ -1,0 +1,57 @@
+{
+  "columns": [
+    {
+      "heading": "Complete Care",
+      "links": [
+        { "label": "Pricing & Insurance", "href": "/insurance" },
+        { "label": "How It Works", "href": "/how-it-works" },
+        { "label": "Our Clinicians", "href": "/providers" },
+        { "label": "Nutrition Coaching", "href": "/nutrition-coaching" }
+      ]
+    },
+    {
+      "heading": "Clinical Lab Review",
+      "links": [
+        { "label": "How It Works", "href": "/labs/how-it-works" },
+        { "label": "What We Test", "href": "/labs/what-we-test" },
+        { "label": "Why Our Providers", "href": "/labs/why-our-providers" }
+      ]
+    },
+    {
+      "heading": "About Us",
+      "links": [
+        { "label": "About Parsley", "href": "/company" },
+        { "label": "What We Offer", "href": "/our-services" },
+        { "label": "Dr. Robin Berzin", "href": "/robin-berzin-md" },
+        { "label": "Reviews", "href": "/reviews" }
+      ]
+    },
+    {
+      "heading": "Resources",
+      "links": [
+        { "label": "Parsley Symptom Index", "href": "/quiz" },
+        { "label": "What We Treat", "href": "/care/conditions" },
+        { "label": "Supplements", "href": "/store" }
+      ]
+    },
+    {
+      "heading": "Centers",
+      "links": [
+        { "label": "New York", "href": "/centers/new-york" },
+        { "label": "Los Angeles", "href": "/centers/los-angeles" },
+        { "label": "San Francisco", "href": "/centers/san-francisco" }
+      ]
+    }
+  ],
+  "social": [
+    { "platform": "facebook", "href": "https://facebook.com/parsleyhealth" },
+    { "platform": "instagram", "href": "https://instagram.com/parsleyhealth" },
+    { "platform": "linkedin", "href": "https://linkedin.com/company/parsley-health" }
+  ],
+  "legal": [
+    { "label": "Privacy Policy", "href": "/privacy-policy" },
+    { "label": "Terms of Use", "href": "/terms" },
+    { "label": "Accessibility", "href": "/accessibility" }
+  ],
+  "copyright": "© 2024 Parsley Health. All rights reserved."
+}

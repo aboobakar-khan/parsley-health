@@ -1,26 +1,91 @@
 @import "tailwindcss";
 
+/* ── Parsley Health Brand Tokens ─────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --forest: #132D2E;
+  --forest-dark: #0D1E1F;
+  --deep-sea: #1B3340;
+  --sand: #DCCBAF;
+  --sand-light: #EADEC8;
+  --mint: #D8EFE8;
+  --seafoam: #EBF2F0;
+  --bone: #F5F3EE;
+  --ivory: #FAF8F5;
+  --sage: #4CAF7D;
+  --sage-dark: #3a9c68;
+  --peach: #F7D5C4;
+
+  --navbar-h: 72px;
+  --banner-h: 48px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-forest: #132D2E;
+  --color-forest-dark: #0D1E1F;
+  --color-deep-sea: #1B3340;
+  --color-sand: #DCCBAF;
+  --color-sand-light: #EADEC8;
+  --color-mint: #D8EFE8;
+  --color-seafoam: #EBF2F0;
+  --color-bone: #F5F3EE;
+  --color-ivory: #FAF8F5;
+  --color-sage: #4CAF7D;
+  --color-peach: #F7D5C4;
+
+  --font-body: "Euclid Circular B", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-serif: "Teodor", Georgia, "Times New Roman", serif;
+  --font-display: "Teodor", Georgia, "Times New Roman", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ── Fonts ─────────────────────────────────────────── */
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("https://static.parsley.health/fonts/euclid-circular-b/EuclidCircularB-Regular-WebS.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("https://static.parsley.health/fonts/euclid-circular-b/EuclidCircularB-Medium-WebS.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Euclid Circular B";
+  src: url("https://static.parsley.health/fonts/euclid-circular-b/EuclidCircularB-Light-WebS.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Teodor";
+  src: url("https://static.parsley.health/fonts/Teodor-Light/Teodor-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
+/* ── Base ─────────────────────────────────────────── */
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--ivory);
+  color: var(--forest);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif, .font-display {
+  font-family: var(--font-serif);
+}
+
+a, button {
+  transition: all 0.2s ease;
 }

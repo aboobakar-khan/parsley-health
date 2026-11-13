@@ -1,0 +1,59 @@
+{
+  "links": [
+    {
+      "label": "Complete Care Membership",
+      "href": "/care",
+      "submenu": [
+        { "title": "Complete Care", "href": "/care" },
+        { "title": "Pricing & Insurance", "href": "/insurance" },
+        { "title": "How It Works", "href": "/how-it-works" },
+        { "title": "Our Clinicians", "href": "/providers" },
+        { "title": "Nutrition Coaching", "href": "/nutrition-coaching" },
+        { "title": "Reviews", "href": "/reviews" }
+      ]
+    },
+    {
+      "label": "Clinical Lab Review",
+      "href": "/labs",
+      "submenu": [
+        { "title": "Clinical Lab Review", "href": "/labs" },
+        { "title": "How It Works", "href": "/labs/how-it-works" },
+        { "title": "What We Test", "href": "/labs/what-we-test" },
+        { "title": "Why Our Providers", "href": "/labs/why-our-providers" }
+      ]
+    },
+    {
+      "label": "Pricing & Insurance",
+      "href": "/insurance"
+    },
+    {
+      "label": "What We Treat",
+      "href": "/care/conditions",
+      "submenu": [
+        { "title": "Gut & Digestive Health", "href": "/care/improve-gut-health" },
+        { "title": "Metabolic Health", "href": "/care/metabolic-health" },
+        { "title": "Hormone Health", "href": "/care/hormonal-imbalance-treatment" },
+        { "title": "Longevity & Healthspan", "href": "/care/longevity" },
+        { "title": "Autoimmune & Inflammation", "href": "/care/autoimmune-disease-treatment" },
+        { "title": "Unexplained Symptoms", "href": "/care/unexplained-illness" },
+        { "title": "Perimenopause & Menopause", "href": "/care/menopause-peri" },
+        { "title": "Mental Health", "href": "/care/mental-health" },
+        { "title": "Fertility, Pregnancy & Postpartum", "href": "/care/reproductive-health" },
+        { "title": "Detox & Environmental Exposure", "href": "/care/detox" },
+        { "title": "Heart Health", "href": "/care/metabolic-heart-rate" }
+      ]
+    },
+    {
+      "label": "Supplements",
+      "href": "/store"
+    }
+  ],
+  "cta": {
+    "login": { "label": "Log in", "href": "https://my.parsleyhealth.com/login" },
+    "join": { "label": "Join now", "href": "/join/care" }
+  },
+  "announcement": {
+    "text": "Parsley is in-network nationwide and FSA/HSA eligible.",
+    "cta": { "label": "Verify insurance", "href": "/join/care?focus=insurance&entry=fsa-hsa-banner" }
+  }
+}
