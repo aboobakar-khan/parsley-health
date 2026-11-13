@@ -5,14 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import navData from "@/data/nav.json";
 import {
   ArrowRight,
-  MoreHorizontal,
   Menu,
   X,
   ChevronDown,
-  Home,
-  HeartPulse,
-  FlaskConical,
-  ShieldCheck,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -38,16 +33,27 @@ export default function Navbar() {
     <>
       {/* ── TOP NAVBAR ── */}
       <header className="sticky top-0 z-50 w-full bg-[#132D2E] border-b border-white/5 transition-colors">
-        <div className="mx-auto flex h-[72px] sm:h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-6 lg:px-10">
-          {/* Logo wordmark */}
-          <a
-            href="/"
-            className="flex items-center text-[#FAF8F5] hover:opacity-90 transition-opacity"
-          >
-            <span className="font-sans text-[21px] sm:text-[22px] font-semibold tracking-[-0.03em] text-[#FAF8F5]">
-              Abubakar Health
-            </span>
-          </a>
+        <div className="mx-auto flex h-[72px] sm:h-[78px] max-w-[1440px] items-center justify-between px-4 sm:px-6 lg:px-10">
+          {/* Mobile Left: Hamburger + Logo Wordmark */}
+          <div className="flex items-center gap-3 lg:gap-0">
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="lg:hidden flex items-center justify-center p-2 text-[#FAF8F5] hover:opacity-80 active:scale-95 transition-all"
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <Menu className="h-6 w-6 stroke-[1.75]" />
+            </button>
+
+            <a
+              href="/"
+              className="flex items-center text-[#FAF8F5] hover:opacity-90 transition-opacity"
+            >
+              <span className="font-sans text-[20px] sm:text-[22px] font-semibold tracking-[-0.03em] text-[#FAF8F5]">
+                Abubakar Health
+              </span>
+            </a>
+          </div>
 
           {/* Desktop Nav Links with Micro-Interactions & Submenus */}
           <nav className="hidden lg:flex items-center gap-7 xl:gap-8 h-full">
@@ -142,19 +148,15 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Top Menu Button (3 Dots / Hamburger Toggle) */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-[#FAF8F5] hover:bg-white/15 active:scale-95 transition-all"
-            aria-label="Toggle navigation menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <MoreHorizontal className="h-5 w-5" />
-            )}
-          </button>
+          {/* Mobile Right: Pill button [Join now] matching phone screenshot */}
+          <div className="lg:hidden flex items-center">
+            <a
+              href={navData.cta.join.href}
+              className="rounded-full border-2 border-white/90 text-white px-5 py-2 text-sm font-medium hover:bg-white/10 active:scale-95 transition-all"
+            >
+              Join now
+            </a>
+          </div>
         </div>
       </header>
 
@@ -186,7 +188,7 @@ export default function Navbar() {
               </button>
             </div>
 
-            {/* Drawer Body: Main Categories (Submenus revealed only on click) */}
+            {/* Drawer Body: Main Categories Only (Submenus revealed only on click) */}
             <div className="flex-1 overflow-y-auto px-6 py-6 pb-28">
               <nav
                 className="flex flex-col divide-y divide-[#132D2E]/10"
@@ -304,85 +306,16 @@ export default function Navbar() {
         )}
       </AnimatePresence>
 
-      {/* ── MOBILE BOTTOM NAVIGATION BAR (Fixed Thumb-Friendly Dock) ── */}
-      <aside
-        aria-label="Mobile quick navigation"
-        className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#132D2E]/95 backdrop-blur-md border-t border-white/10 px-3 py-2 pb-[max(8px,env(safe-area-inset-bottom))] shadow-[0_-10px_25px_rgba(0,0,0,0.3)] transition-all"
-      >
-        <div className="grid grid-cols-5 items-center max-w-md mx-auto">
-          {/* Tab 1: Home */}
-          <a
-            href="/"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5]/75 hover:text-[#FAF8F5] active:text-[#4CAF7D] transition-colors group"
-          >
-            <Home className="w-5 h-5 transition-transform group-active:scale-90" />
-            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-1">
-              Home
-            </span>
-          </a>
-
-          {/* Tab 2: Care */}
-          <a
-            href="/care"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5]/75 hover:text-[#FAF8F5] active:text-[#4CAF7D] transition-colors group"
-          >
-            <HeartPulse className="w-5 h-5 transition-transform group-active:scale-90" />
-            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-1">
-              Care
-            </span>
-          </a>
-
-          {/* Tab 3: Labs */}
-          <a
-            href="/labs"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5]/75 hover:text-[#FAF8F5] active:text-[#4CAF7D] transition-colors group"
-          >
-            <FlaskConical className="w-5 h-5 transition-transform group-active:scale-90" />
-            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-1">
-              Labs
-            </span>
-          </a>
-
-          {/* Tab 4: Verify Insurance Highlighted Pill */}
-          <a
-            href="/join/care"
-            onClick={() => setMobileMenuOpen(false)}
-            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5] transition-colors group"
-          >
-            <div className="w-10 h-7 rounded-full bg-[#BEE3D6] text-[#132D2E] flex items-center justify-center shadow-sm group-active:scale-95 transition-transform">
-              <ShieldCheck className="w-4 h-4 text-[#132D2E]" />
-            </div>
-            <span className="text-[10px] sm:text-[11px] font-semibold text-[#BEE3D6] tracking-tight mt-0.5">
-              Verify
-            </span>
-          </a>
-
-          {/* Tab 5: 3-Dot Menu Button -> Opens Mobile Drawer with Accordion */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`flex flex-col items-center justify-center py-1 transition-colors group ${
-              mobileMenuOpen
-                ? "text-[#4CAF7D]"
-                : "text-[#FAF8F5]/75 hover:text-[#FAF8F5]"
-            }`}
-            aria-label="Open full menu"
-          >
-            <div
-              className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
-                mobileMenuOpen ? "bg-[#4CAF7D]/20 text-[#4CAF7D]" : ""
-              }`}
-            >
-              <MoreHorizontal className="w-5 h-5 transition-transform group-active:scale-90" />
-            </div>
-            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-0.5">
-              Menu
-            </span>
-          </button>
-        </div>
-      </aside>
+      {/* ── MOBILE STICKY FLOATING CTA BUTTON ("Verify insurance →" matching phone screenshot) ── */}
+      <div className="fixed bottom-6 left-0 right-0 z-40 px-5 flex items-center justify-center pointer-events-none md:hidden">
+        <a
+          href="/join/care?focus=insurance"
+          className="pointer-events-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#132D2E] text-white py-4 px-8 text-[15px] font-medium shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:bg-[#1B3340] active:scale-95 transition-all w-full max-w-[340px]"
+        >
+          <span>Verify insurance</span>
+          <ArrowRight className="h-4 w-4" />
+        </a>
+      </div>
     </>
   );
 }
