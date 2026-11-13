@@ -147,104 +147,123 @@ export default function Outcomes() {
       </section>
 
       {/* ── PART 2: HOW PARSLEY COMPARES TABLE (Exact Match to Uploaded Screenshot) ── */}
-      <section className="py-20 lg:py-28 overflow-hidden">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-light leading-tight text-[#132D2E]">
+      <section className="py-24 lg:py-36 overflow-visible relative">
+        <div className="mx-auto max-w-[1240px] px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+            <p className="text-xs sm:text-[13px] font-semibold tracking-[0.2em] uppercase text-[#132D2E]/60 mb-4">
+              HOW ABUBAKAR HEALTH COMPARES
+            </p>
+            <h2 className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-light leading-[1.12] text-[#132D2E] tracking-tight">
               Get more out of medicine than<br className="hidden sm:inline" /> you ever thought possible
             </h2>
           </div>
 
-          {/* Comparison Table */}
-          <div className="overflow-x-auto pb-4">
-            <div className="min-w-[700px] border-t border-[#132D2E]/15 relative">
-              {/* Continuous 100% Solid Mint Slab for Abubakar Health Column - ZERO GAPS, Pure Paint-like */}
-              <div
-                className="absolute right-0 top-0 bottom-0 w-[calc(100%*2/12)] bg-[#BEE3D6] pointer-events-none z-0"
-                aria-hidden="true"
-              />
+          {/* Comparison Table Container with Sticky Button boundary */}
+          <div className="relative pb-10">
+            <div className="overflow-x-auto pb-4 scrollbar-none">
+              <div className="min-w-[850px] border-t border-[#132D2E]/20 relative">
+                {/* Continuous 100% Solid Mint Slab for Abubakar Health Column - ZERO GAPS, Pure Paint-like */}
+                <div
+                  className="absolute right-0 top-0 bottom-0 w-[calc(100%*2/12)] bg-[#BEE3D6] pointer-events-none z-0"
+                  aria-hidden="true"
+                />
 
-              {/* Table Header */}
-              <div className="grid grid-cols-12 items-stretch text-sm font-medium text-[#132D2E] relative z-10">
-                <div className="col-span-4 p-4 md:p-6 border-b border-[#132D2E]/15" />
-                <div className="col-span-2 p-4 text-center leading-snug flex flex-col justify-end border-b border-[#132D2E]/15">
-                  Primary Care<br />Provider
-                </div>
-                <div className="col-span-2 p-4 text-center leading-snug flex flex-col justify-end border-b border-[#132D2E]/15">
-                  Functional<br />Medicine Clinic
-                </div>
-                <div className="col-span-2 p-4 text-center leading-snug flex flex-col justify-end border-b border-[#132D2E]/15">
-                  Concierge<br />Clinic
-                </div>
-                {/* Highlighted Abubakar Health Column Header - perfectly flush inside solid mint slab */}
-                <div className="col-span-2 p-5 text-center text-[#132D2E] font-medium leading-snug flex items-center justify-center">
-                  Abubakar Health
-                </div>
-              </div>
-
-              {/* Table Rows */}
-              <div>
-                {comparisonRows.map((row) => (
-                  <div
-                    key={row.feature}
-                    className="grid grid-cols-12 items-stretch text-sm text-[#132D2E] relative z-10"
-                  >
-                    {/* Feature Label */}
-                    <div className="col-span-4 p-4 md:p-6 font-normal text-base text-[#132D2E] flex items-center border-b border-[#132D2E]/15">
-                      {row.feature}
-                    </div>
-
-                    {/* Primary Care Provider */}
-                    <div className="col-span-2 p-4 flex items-center justify-center text-center border-b border-[#132D2E]/15">
-                      {row.pcp === "check" ? (
-                        <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
-                      ) : row.pcp === "x" ? (
-                        <X className="h-5 w-5 text-[#9CA3AF] stroke-[1.5]" />
-                      ) : (
-                        <span className="text-sm text-[#132D2E]">{row.pcp}</span>
-                      )}
-                    </div>
-
-                    {/* Functional Medicine Clinic */}
-                    <div className="col-span-2 p-4 flex items-center justify-center text-center border-b border-[#132D2E]/15">
-                      {row.functional === "check" ? (
-                        <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
-                      ) : row.functional === "x" ? (
-                        <X className="h-5 w-5 text-[#9CA3AF] stroke-[1.5]" />
-                      ) : (
-                        <span className="text-sm text-[#132D2E]">{row.functional}</span>
-                      )}
-                    </div>
-
-                    {/* Concierge Clinic */}
-                    <div className="col-span-2 p-4 flex items-center justify-center text-center border-b border-[#132D2E]/15">
-                      {row.concierge === "check" ? (
-                        <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
-                      ) : row.concierge === "x" ? (
-                        <X className="h-5 w-5 text-[#9CA3AF] stroke-[1.5]" />
-                      ) : (
-                        <span className="text-sm text-[#132D2E]">{row.concierge}</span>
-                      )}
-                    </div>
-
-                    {/* Abubakar Health Column - perfectly transparent over continuous solid mint slab */}
-                    <div className="col-span-2 p-5 flex items-center justify-center text-center">
-                      {row.parsley === "check" ? (
-                        <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
-                      ) : (
-                        <span className="text-sm font-medium text-[#132D2E]">{row.parsley}</span>
-                      )}
-                    </div>
+                {/* Table Header */}
+                <div className="grid grid-cols-12 items-stretch text-sm font-medium text-[#132D2E] relative z-10">
+                  <div className="col-span-4 p-6 md:p-8 border-b border-[#132D2E]/20" />
+                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] sm:text-[18px] lg:text-[19px] font-normal border-b border-[#132D2E]/20">
+                    Primary Care<br />Provider
                   </div>
-                ))}
+                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] sm:text-[18px] lg:text-[19px] font-normal border-b border-[#132D2E]/20">
+                    Functional<br />Medicine Clinic
+                  </div>
+                  <div className="col-span-2 p-6 md:p-8 text-center leading-snug flex flex-col justify-end text-[16px] sm:text-[18px] lg:text-[19px] font-normal border-b border-[#132D2E]/20">
+                    Concierge<br />Clinic
+                  </div>
+                  {/* Highlighted Abubakar Health Column Header */}
+                  <div className="col-span-2 p-6 md:p-8 text-center text-[#132D2E] text-[18px] sm:text-[20px] font-medium leading-snug flex items-center justify-center">
+                    Abubakar Health
+                  </div>
+                </div>
+
+                {/* Table Rows */}
+                <div>
+                  {comparisonRows.map((row) => (
+                    <div
+                      key={row.feature}
+                      className="grid grid-cols-12 items-stretch text-[#132D2E] relative z-10"
+                    >
+                      {/* Feature Label */}
+                      <div className="col-span-4 p-6 md:p-8 font-light text-lg sm:text-[21px] lg:text-[22px] text-[#132D2E] leading-normal flex items-center border-b border-[#132D2E]/20">
+                        {row.feature}
+                      </div>
+
+                      {/* Primary Care Provider */}
+                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center border-b border-[#132D2E]/20">
+                        {row.pcp === "check" ? (
+                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M20 6L9 17l-5-5" />
+                          </svg>
+                        ) : row.pcp === "x" ? (
+                          <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                          </svg>
+                        ) : (
+                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E]">{row.pcp}</span>
+                        )}
+                      </div>
+
+                      {/* Functional Medicine Clinic */}
+                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center border-b border-[#132D2E]/20">
+                        {row.functional === "check" ? (
+                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M20 6L9 17l-5-5" />
+                          </svg>
+                        ) : row.functional === "x" ? (
+                          <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                          </svg>
+                        ) : (
+                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E]">{row.functional}</span>
+                        )}
+                      </div>
+
+                      {/* Concierge Clinic */}
+                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center border-b border-[#132D2E]/20">
+                        {row.concierge === "check" ? (
+                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M20 6L9 17l-5-5" />
+                          </svg>
+                        ) : row.concierge === "x" ? (
+                          <svg className="w-6 h-6 text-[#132D2E]/35" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M18 6L6 18M6 6l12 12" />
+                          </svg>
+                        ) : (
+                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E]">{row.concierge}</span>
+                        )}
+                      </div>
+
+                      {/* Abubakar Health Column - perfectly transparent over continuous solid mint slab */}
+                      <div className="col-span-2 p-6 md:p-8 flex items-center justify-center text-center">
+                        {row.parsley === "check" ? (
+                          <svg className="w-7 h-7 text-[#132D2E]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M20 6L9 17l-5-5" />
+                          </svg>
+                        ) : (
+                          <span className="text-lg sm:text-[20px] font-medium text-[#132D2E] tracking-wider">{row.parsley}</span>
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
-            {/* Overlapping Floating Pill Button: Verify insurance → */}
-            <div className="relative -mt-5 z-10 flex justify-center">
+            {/* Sticky Floating Button: Remains pinned while scrolling table */}
+            <div className="sticky bottom-8 z-30 flex justify-center pointer-events-none mt-6">
               <a
                 href="/join/care?focus=insurance"
-                className="inline-flex items-center gap-2 rounded-full bg-[#1E3B3A] px-7 py-3 text-sm font-medium text-white shadow-md hover:bg-[#152B2A] transition-all"
+                className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-[#1E3B3A] hover:bg-[#132D2E] px-8 py-3.5 text-[15px] font-medium text-white shadow-xl hover:shadow-2xl transition-all"
               >
                 <span>Verify insurance</span>
                 <ArrowRight className="h-4 w-4" />
