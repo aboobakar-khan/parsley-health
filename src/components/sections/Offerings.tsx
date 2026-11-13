@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
 
 export default function Offerings() {
   const [activeCard, setActiveCard] = useState<number>(0);
@@ -16,10 +15,10 @@ export default function Offerings() {
   ];
 
   return (
-    <section className="bg-[#132D2E] py-16 lg:py-24 text-[#132D2E] overflow-hidden">
-      <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-10">
+    <section className="bg-[#132D2E] py-16 md:py-20 lg:py-28 text-[#132D2E] overflow-hidden">
+      <div className="mx-auto max-w-[1340px] px-5 sm:px-8 lg:px-10">
         {/* Section Header: Experience the Abubakar Health Difference / Two ways to get started */}
-        <div className="flex flex-col items-center gap-3 text-center mb-12 sm:mb-16">
+        <div className="flex flex-col items-center gap-3 text-center mb-10 sm:mb-14 lg:mb-16">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#FAF8F5]/80 font-sans">
             Experience the Abubakar Health Difference
           </p>
@@ -28,11 +27,11 @@ export default function Offerings() {
           </h2>
         </div>
 
-        {/* Desktop Interactive Expanding Accordion Cards (lg:flex) */}
+        {/* Desktop Interactive Expanding Accordion Cards (xl:flex) */}
         <div
           role="radiogroup"
           aria-label="Choose your Abubakar Health experience"
-          className="hidden lg:flex w-full gap-3 items-stretch min-h-[604px]"
+          className="hidden xl:flex w-full gap-3 items-stretch min-h-[604px]"
         >
           {/* ── CARD 0: Complete Care Membership ── */}
           <div
@@ -305,67 +304,130 @@ export default function Offerings() {
           </div>
         </div>
 
-        {/* Mobile View (lg:hidden): Stacked Cards */}
-        <div className="flex lg:hidden flex-col gap-6">
-          {/* Card 1 Mobile */}
-          <div className="rounded-2xl bg-[#FAF8F5] p-8 flex flex-col gap-6 shadow-xl">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 font-sans">
-              ONGOING CARE
-            </p>
-            <h3 className="font-serif text-3xl font-light leading-tight text-[#132D2E]">
-              Complete Care Membership
-            </h3>
-            <p className="font-sans text-sm text-[#132D2E]/80 leading-relaxed">
-              Our annual program with a dedicated care team and personalized care plan. Medical visits, labs, and prescriptions billed to insurance.
-            </p>
-            <div className="pt-4 border-t border-[#132D2E]/10">
-              <p className="font-sans text-base text-[#132D2E] font-medium">
-                $150/month or $1,500/year (in-network)
+        {/* ── Mobile & Tablet View (xl:hidden): Pixel-perfect authentic stacked cards ── */}
+        <div className="flex xl:hidden flex-col gap-6 w-full max-w-[640px] mx-auto">
+          {/* Mobile Card 1: Complete Care Membership */}
+          <div className="flex flex-col gap-7 sm:gap-8 bg-[#FAF8F5] rounded-2xl p-6 sm:p-8 shadow-md">
+            {/* Header */}
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 font-sans">
+                ONGOING CARE
               </p>
-              <p className="text-xs text-[#132D2E]/60 mt-0.5">$275/month (self-pay)</p>
-              <p className="text-sm font-normal text-[#C86D48] mt-1.5">Insurance accepted, HSA/FSA eligible</p>
+              <h3 className="font-serif font-light tracking-[-0.01em] text-[#132D2E] text-[30px] sm:text-[34px] leading-[1.12]">
+                Complete Care Membership
+              </h3>
+            </div>
+
+            {/* Body Description */}
+            <div className="font-sans text-[15px] leading-[1.6] tracking-[-0.01em] text-[#132D2E]/85">
+              <p>
+                Our{" "}
+                <a
+                  href="/care"
+                  className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
+                >
+                  annual program
+                </a>{" "}
+                with a dedicated care team and personalized care plan. Medical visits, labs, and prescriptions billed to insurance.
+              </p>
+            </div>
+
+            {/* Vertical 6-step Roadmap with connecting line */}
+            <ol className="relative flex flex-col gap-4 sm:gap-5" aria-label="What's included in this plan">
+              <span
+                aria-hidden="true"
+                className="absolute left-[5px] top-[6px] bottom-[6px] w-px bg-[#132D2E]/30"
+              />
+              {roadmapItems.map((item, idx) => (
+                <li key={idx} className="relative flex items-start gap-3.5 sm:gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="relative z-10 mt-[5px] block h-[11px] w-[11px] flex-none rounded-full bg-[#4CAF7D] ring-2 ring-[#FAF8F5]"
+                  />
+                  <span className="font-sans text-[14px] leading-[1.5] tracking-[-0.01em] text-[#132D2E]">
+                    {item}
+                  </span>
+                </li>
+              ))}
+            </ol>
+
+            {/* Pricing & CTA */}
+            <div className="flex flex-col gap-6">
+              <div className="flex w-full flex-col items-start text-left">
+                <span aria-hidden="true" className="mb-6 block h-px w-full bg-[#132D2E]/15" />
+                <p className="font-sans text-[18px] sm:text-[20px] leading-[1.4] tracking-[-0.01em] text-[#132D2E]">
+                  <span className="font-medium">$150/month or $1,500/year (in-network)</span>
+                  <span aria-hidden="true" className="text-[#132D2E]/40"> · </span>
+                  <span className="text-[14px] text-[#132D2E]/70">$275/month (self-pay)</span>
+                </p>
+                <p className="mt-1 font-sans text-[15px] leading-6 tracking-[-0.01em] text-[#C86D48] font-medium">
+                  Insurance accepted, HSA/FSA eligible
+                </p>
+                <p className="mt-1 font-sans text-[13px] sm:text-[14px] leading-[1.6] text-[#132D2E]/60">
+                  12-month membership commitment
+                </p>
+              </div>
+
               <a
                 href="/join/care"
-                className="mt-5 inline-flex w-full items-center justify-center rounded-full bg-[#132D2E] px-8 py-3.5 text-sm font-medium text-white shadow-sm"
+                className="inline-flex items-center justify-center rounded-full bg-[#132D2E] text-white py-4 px-8 text-sm font-medium w-full sm:max-w-[280px] hover:bg-[#1B3340] active:scale-[0.99] transition-all shadow-sm"
               >
                 Join now
               </a>
             </div>
           </div>
 
-          {/* Card 2 Mobile */}
-          <div className="rounded-2xl bg-[#FAF8F5] p-8 flex flex-col gap-6 shadow-xl">
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 font-sans">
-              LAB INSIGHTS
-            </p>
-            <h3 className="font-serif text-3xl font-light leading-tight text-[#132D2E]">
-              Clinical Lab Review
-            </h3>
-            <p className="font-sans text-sm text-[#132D2E]/80 leading-relaxed">
-              Not ready for Complete Care yet? Meet with a clinician to review your lab results and get a clear picture of your health. Bring any bloodwork from the past 6 months.
-            </p>
-            <div className="pt-4 border-t border-[#132D2E]/10">
-              <p className="font-sans text-base text-[#132D2E] font-medium">$250/visit &bull; Self-pay only</p>
-              <p className="text-sm font-normal text-[#C86D48] mt-1.5">HSA/FSA eligible</p>
+          {/* Mobile Card 2: Clinical Lab Review */}
+          <div className="flex flex-col gap-7 sm:gap-8 bg-[#FAF8F5] rounded-2xl p-6 sm:p-8 shadow-md">
+            {/* Header */}
+            <div className="flex flex-col gap-3">
+              <p className="text-xs font-semibold tracking-widest uppercase text-[#132D2E]/70 font-sans">
+                LAB INSIGHTS
+              </p>
+              <h3 className="font-serif font-light tracking-[-0.01em] text-[#132D2E] text-[30px] sm:text-[34px] leading-[1.12]">
+                Clinical Lab Review
+              </h3>
+            </div>
+
+            {/* Body Description */}
+            <div className="font-sans text-[15px] leading-[1.6] tracking-[-0.01em] text-[#132D2E]/85">
+              <p>
+                Not ready for Complete Care yet? Meet with a clinician to{" "}
+                <a
+                  href="/labs"
+                  className="underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]"
+                >
+                  review your lab results
+                </a>{" "}
+                and get a clear picture of your health. Bring any bloodwork from the past 6 months.
+              </p>
+            </div>
+
+            {/* Pricing & CTA */}
+            <div className="flex flex-col gap-6">
+              <div className="flex w-full flex-col items-start text-left">
+                <span aria-hidden="true" className="mb-6 block h-px w-full bg-[#132D2E]/15" />
+                <p className="font-sans text-[18px] sm:text-[20px] leading-[1.4] tracking-[-0.01em] text-[#132D2E]">
+                  <span className="font-medium">$250/visit</span>
+                  <span aria-hidden="true" className="text-[#132D2E]/40"> · </span>
+                  <span className="text-[14px] text-[#132D2E]/70">Self-pay only</span>
+                </p>
+                <p className="mt-1 font-sans text-[15px] leading-6 tracking-[-0.01em] text-[#C86D48] font-medium">
+                  HSA/FSA eligible
+                </p>
+                <p className="mt-1 font-sans text-[13px] sm:text-[14px] leading-[1.6] text-[#132D2E]/60">
+                  $250 credit will be applied to Complete Care membership if you sign up post-visit
+                </p>
+              </div>
+
               <a
                 href="/join/labs"
-                className="mt-5 inline-flex w-full items-center justify-center rounded-full border-2 border-[#132D2E] px-8 py-3.5 text-sm font-medium text-[#132D2E]"
+                className="inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] text-[#132D2E] bg-transparent py-4 px-8 text-sm font-medium w-full sm:max-w-[280px] hover:bg-[#132D2E] hover:text-white active:scale-[0.99] transition-all"
               >
                 Review your labs
               </a>
             </div>
           </div>
-        </div>
-
-        {/* Centered Bottom CTA */}
-        <div className="mt-12 text-center">
-          <a
-            href="/join/care"
-            className="inline-flex items-center gap-2 rounded-full bg-[#1E3B3A] border border-white/10 px-8 py-3.5 text-sm font-medium text-white shadow-md hover:bg-[#284E4D] transition-all"
-          >
-            <span>Book your visit</span>
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
       </div>
     </section>
