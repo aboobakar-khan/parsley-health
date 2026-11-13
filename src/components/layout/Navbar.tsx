@@ -305,17 +305,6 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* ── MOBILE STICKY FLOATING CTA BUTTON ("Verify insurance →" matching phone screenshot) ── */}
-      <div className="fixed bottom-6 left-0 right-0 z-40 px-5 flex items-center justify-center pointer-events-none md:hidden">
-        <a
-          href="/join/care?focus=insurance"
-          className="pointer-events-auto inline-flex items-center justify-center gap-2 rounded-full bg-[#132D2E] text-white py-4 px-8 text-[15px] font-medium shadow-[0_12px_32px_rgba(0,0,0,0.35)] hover:bg-[#1B3340] active:scale-95 transition-all w-full max-w-[340px]"
-        >
-          <span>Verify insurance</span>
-          <ArrowRight className="h-4 w-4" />
-        </a>
-      </div>
     </>
   );
 }

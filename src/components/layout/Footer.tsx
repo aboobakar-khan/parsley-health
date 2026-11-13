@@ -5,7 +5,7 @@ import HipaaLogo from "./HipaaLogo";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#274849] text-white pt-12 pb-24 px-6 sm:px-10 lg:py-16 w-full">
+    <footer className="relative bg-[#274849] text-white py-12 px-6 sm:px-10 lg:py-16 w-full">
       {/* Centered tight container matching user screenshot */}
       <div className="max-w-[1040px] mx-auto">
         {/* ── TOP HORIZONTAL DIVIDER LINE ── */}
