@@ -4,22 +4,25 @@ import footerData from "@/data/footer.json";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#132D2E] text-[#FAF8F5] pt-12 pb-10 border-t border-[#4CAF7D]/30">
-      <div className="mx-auto max-w-[1360px] px-6 lg:px-12">
-        {/* Main 4-Column Footer Grid matching uploaded screenshot */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-14">
+    <footer className="bg-[#27484A] text-[#FAF8F5] pt-14 pb-12 w-full">
+      <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
+        {/* ── TOP HORIZONTAL DIVIDER LINE MATCHING ORIGINAL ── */}
+        <div className="border-t border-[#4C7D75]/70 mb-12 sm:mb-14" />
+
+        {/* ── MAIN 4-COLUMN FOOTER GRID ── */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-4">
           {/* ── COLUMN 1: Brand Wordmark, Newsletter Pill, Socials & HIPAA (lg:col-span-4) ── */}
           <div className="lg:col-span-4 flex flex-col items-start pr-4">
             {/* Wordmark */}
-            <a href="/" className="inline-block text-[#FAF8F5] hover:opacity-90 transition-opacity">
-              <span className="font-sans text-[26px] font-semibold tracking-[-0.03em] text-white">
+            <a href="/" className="inline-block hover:opacity-90 transition-opacity">
+              <span className="font-sans text-[26px] sm:text-[28px] font-semibold tracking-[-0.03em] text-[#FCFBFA]">
                 Abubakar Health
               </span>
             </a>
 
             {/* Newsletter */}
-            <div className="mt-7 w-full max-w-[320px]">
-              <h3 className="text-sm font-medium text-[#4CAF7D] mb-3">
+            <div className="mt-8 w-full max-w-[315px]">
+              <h3 className="text-[14.5px] font-medium text-[#6FB29F] mb-3 tracking-wide">
                 Sign up for our newsletter
               </h3>
               <form
@@ -30,11 +33,11 @@ export default function Footer() {
                   type="email"
                   placeholder="Enter your email"
                   required
-                  className="w-full rounded-l-full bg-transparent px-4 py-2 text-sm text-[#132D2E] placeholder:text-[#132D2E]/60 focus:outline-none"
+                  className="w-full rounded-l-full bg-transparent px-4 py-2 text-sm text-[#27484A] placeholder:text-[#27484A]/60 focus:outline-none"
                 />
                 <button
                   type="submit"
-                  className="rounded-full bg-[#4CAF7D] hover:bg-[#3D9468] text-white px-5 py-2.5 text-sm font-medium transition-colors whitespace-nowrap cursor-pointer shadow-sm"
+                  className="rounded-full bg-[#5DA188] hover:bg-[#4E8F77] text-white px-5 py-2.5 text-sm font-medium transition-colors whitespace-nowrap cursor-pointer shadow-sm"
                 >
                   Sign Up
                 </button>
@@ -42,8 +45,8 @@ export default function Footer() {
             </div>
 
             {/* Share Abubakar Health & HIPAA Emblem */}
-            <div className="mt-8">
-              <h3 className="text-sm font-medium text-[#4CAF7D] mb-3">
+            <div className="mt-9">
+              <h3 className="text-[14.5px] font-medium text-[#6FB29F] mb-3.5 tracking-wide">
                 Share Abubakar Health
               </h3>
               <div className="flex items-center gap-4 text-white">
@@ -90,7 +93,7 @@ export default function Footer() {
 
                   {/* YouTube */}
                   <a
-                    href="https://www.youtube.com/@parsleyhealth"
+                    href="https://www.youtube.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="YouTube"
@@ -103,13 +106,13 @@ export default function Footer() {
                 </div>
 
                 {/* HIPAA Compliant Emblem */}
-                <div className="flex items-center gap-1.5 pl-2 opacity-90 hover:opacity-100 transition-opacity">
+                <div className="flex items-center gap-1.5 pl-3 opacity-95 hover:opacity-100 transition-opacity">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="1.5"
-                    className="h-7 w-7 text-white"
+                    className="h-8 w-8 text-white"
                   >
                     <path
                       d="M12 2v20M12 2a4 4 0 0 1 4 4c0 3-4 5-4 8M12 2a4 4 0 0 0-4 4c0 3 4 5 4 8"
@@ -118,7 +121,7 @@ export default function Footer() {
                     <circle cx="12" cy="2" r="1.5" fill="currentColor" />
                     <path d="M8 8h8M7 12h10" strokeLinecap="round" />
                   </svg>
-                  <div className="flex flex-col text-[10px] uppercase font-bold tracking-tight text-white leading-tight">
+                  <div className="flex flex-col text-[9.5px] uppercase font-bold tracking-tight text-white leading-tight">
                     <span>HIPAA</span>
                     <span>COMPLIANT</span>
                   </div>
@@ -128,18 +131,18 @@ export default function Footer() {
           </div>
 
           {/* ── COLUMN 2: Complete Care & Clinical Lab Review (lg:col-span-3) ── */}
-          <div className="lg:col-span-3 flex flex-col gap-8">
+          <div className="lg:col-span-3 flex flex-col gap-9">
             {/* Complete Care Group */}
             <div>
-              <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
                 Complete Care
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {footerData.completeCare.map((item) => (
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-[14px] text-[#FAF8F5]/85 hover:text-white hover:underline hover:underline-offset-4 decoration-[#4CAF7D] transition-all"
+                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
                     >
                       {item.label}
                     </a>
@@ -150,15 +153,15 @@ export default function Footer() {
 
             {/* Clinical Lab Review Group */}
             <div>
-              <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
                 Clinical Lab Review
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {footerData.clinicalLabReview.map((item) => (
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-[14px] text-[#FAF8F5]/85 hover:text-white hover:underline hover:underline-offset-4 decoration-[#4CAF7D] transition-all"
+                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
                     >
                       {item.label}
                     </a>
@@ -169,17 +172,17 @@ export default function Footer() {
           </div>
 
           {/* ── COLUMN 3: About Us & Action Buttons (lg:col-span-3) ── */}
-          <div className="lg:col-span-3 flex flex-col justify-between">
+          <div className="lg:col-span-3 flex flex-col">
             <div>
-              <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
                 About Us
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {footerData.aboutUs.map((item) => (
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-[14px] text-[#FAF8F5]/85 hover:text-white hover:underline hover:underline-offset-4 decoration-[#4CAF7D] transition-all"
+                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
                     >
                       {item.label}
                     </a>
@@ -188,12 +191,12 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* CTA Buttons matching screenshot */}
-            <div className="mt-8 flex flex-col gap-3 w-full max-w-[280px]">
+            {/* CTA Buttons placed below About Us links */}
+            <div className="mt-8 flex flex-col gap-3.5 w-full max-w-[210px]">
               {/* Peach Pill Button: Join Abubakar Health */}
               <a
                 href="/join/care"
-                className="inline-flex items-center justify-center rounded-full bg-[#ECC8AE] text-[#132D2E] py-3.5 px-6 text-sm font-medium shadow-sm hover:opacity-95 transition-opacity text-center whitespace-nowrap"
+                className="inline-flex items-center justify-center rounded-full bg-[#EBCFB8] text-[#27484A] py-3 px-6 text-sm font-medium shadow-sm hover:bg-[#dfc2aa] transition-colors text-center whitespace-nowrap"
               >
                 Join Abubakar Health
               </a>
@@ -201,7 +204,7 @@ export default function Footer() {
               {/* Outline Pill Button: Speak with an advisor */}
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-[#ECC8AE] text-white py-3.5 px-6 text-sm font-medium hover:border-white transition-colors text-center whitespace-nowrap"
+                className="inline-flex items-center justify-center rounded-full border border-[#EACEB7] text-[#FAF8F5] py-3 px-6 text-sm font-medium hover:border-white transition-colors text-center whitespace-nowrap"
               >
                 Speak with an advisor
               </a>
@@ -209,18 +212,18 @@ export default function Footer() {
           </div>
 
           {/* ── COLUMN 4: Resources & Centers (lg:col-span-2) ── */}
-          <div className="lg:col-span-2 flex flex-col gap-8">
+          <div className="lg:col-span-2 flex flex-col gap-9">
             {/* Resources Group */}
             <div>
-              <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
                 Resources
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {footerData.resources.map((item) => (
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-[14px] text-[#FAF8F5]/85 hover:text-white hover:underline hover:underline-offset-4 decoration-[#4CAF7D] transition-all"
+                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
                     >
                       {item.label}
                     </a>
@@ -231,15 +234,15 @@ export default function Footer() {
 
             {/* Centers Group */}
             <div>
-              <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
                 Centers
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {footerData.centers.map((item) => (
                   <li key={item.label}>
                     <a
                       href={item.href}
-                      className="text-[14px] text-[#FAF8F5]/85 hover:text-white hover:underline hover:underline-offset-4 decoration-[#4CAF7D] transition-all"
+                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
                     >
                       {item.label}
                     </a>
@@ -250,15 +253,15 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* ── Bottom Divider Line & Legal Metadata ── */}
-        <div className="border-t border-[#4CAF7D]/30 pt-8 flex flex-col sm:items-end items-center gap-3">
+        {/* ── BOTTOM HORIZONTAL DIVIDER LINE & LEGAL METADATA ── */}
+        <div className="border-t border-[#4C7D75]/70 mt-14 pt-8 flex flex-col sm:items-end items-center gap-2.5">
           {/* Copyright Address */}
-          <p className="text-[12px] sm:text-[13px] text-[#FAF8F5]/70 text-center sm:text-right font-normal">
+          <p className="text-[12px] sm:text-[12.5px] text-[#FAF8F5]/80 text-center sm:text-right font-normal">
             {footerData.copyright}
           </p>
 
           {/* Legal Links Row with Vertical Dividers */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2.5 gap-y-1 text-[12px] sm:text-[12.5px] text-[#FAF8F5]/75">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2.5 gap-y-1 text-[12px] sm:text-[12.5px] text-[#FAF8F5]/80">
             {footerData.legal.map((item, idx) => (
               <span key={item.label} className="inline-flex items-center gap-2.5">
                 <a
@@ -268,7 +271,7 @@ export default function Footer() {
                   {item.label}
                 </a>
                 {idx < footerData.legal.length - 1 && (
-                  <span aria-hidden="true" className="h-2.5 w-px bg-[#4CAF7D]/50 inline-block" />
+                  <span aria-hidden="true" className="h-2.5 w-px bg-[#4C7D75]/70 inline-block" />
                 )}
               </span>
             ))}
