@@ -44,7 +44,7 @@ export default function ValueProp() {
               <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-md aspect-[4/3]">
                 <img
                   src="https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fbae37b8d24f04a8c8ee69e30bf16bec2?width=1080&quality=80&format=webp"
-                  alt="Doctor consulting with patient at Parsley Health"
+                  alt="Doctor consulting with patient at Abubakar Health"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -86,7 +86,7 @@ export default function ValueProp() {
                 Functional medicine, now accessible with insurance.
               </h2>
               <p className="mt-6 text-base sm:text-lg text-[#132D2E]/80 leading-relaxed font-normal">
-                Parsley Health is the first and only functional medicine provider to accept insurance nationwide. Membership starts at $150/month with in-network coverage.
+                Abubakar Health is the first and only functional medicine provider to accept insurance nationwide. Membership starts at $150/month with in-network coverage.
               </p>
               <p className="mt-4 text-base sm:text-lg text-[#132D2E]/80 leading-relaxed font-normal">
                 No five-figure program fees, no long wait times. See a clinician within days, from the comfort of your own space.

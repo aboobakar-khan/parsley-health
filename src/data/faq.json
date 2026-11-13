@@ -6,22 +6,22 @@
   },
   {
     "id": "insurance",
-    "question": "Does Parsley Health take insurance?",
-    "answer": "Yes – Parsley accepts insurance in all 50 states. You can <a href=\"/join/care\" class=\"underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]\">check your eligibility</a> in minutes to see if your plan is in-network. Membership fees for those using insurance are lower at $150/month or $1,500/year (2 months free). Insurance helps support eligible medical costs: provider visits, lab testing, and prescription medications. Copays and deductibles apply. Contact your insurance provider directly for specific cost estimates."
+    "question": "Does Abubakar Health take insurance?",
+    "answer": "Yes – Abubakar Health accepts insurance in all 50 states. You can <a href=\"/join/care\" class=\"underline underline-offset-4 decoration-[#132D2E]/40 hover:decoration-[#132D2E]\">check your eligibility</a> in minutes to see if your plan is in-network. Membership fees for those using insurance are lower at $150/month or $1,500/year (2 months free). Insurance helps support eligible medical costs: provider visits, lab testing, and prescription medications. Copays and deductibles apply. Contact your insurance provider directly for specific cost estimates."
   },
   {
     "id": "vs-telehealth",
     "question": "How is this different from other telehealth providers or my PCP?",
-    "answer": "Other telehealth providers and traditional primary care are built for acute, episodic care — they're excellent at treating what's right in front of them. But Parsley is built for the complex, multi-system, chronic symptoms that the one-off visits of conventional care consistently miss. We go deeper, stay longer, and look at the whole picture to not just help you to feel well in the present, but maintain optimal health for years to come."
+    "answer": "Other telehealth providers and traditional primary care are built for acute, episodic care — they're excellent at treating what's right in front of them. But Abubakar Health is built for the complex, multi-system, chronic symptoms that the one-off visits of conventional care consistently miss. We go deeper, stay longer, and look at the whole picture to not just help you to feel well in the present, but maintain optimal health for years to come."
   },
   {
     "id": "lab-review-vs-complete",
-    "question": "How does Parsley’s Clinical Lab Review visit differ from the Complete Care program?",
-    "answer": "Our Clinical Lab Review is a single 30-minute virtual visit with a board-certified clinician focused on interpreting your blood test results to give you with a clear action plan and next steps. It's a great starting point if you want to better understand your lab test results or want to experience Parsley's functional medicine care before committing to the annual program.<br/><br/>Complete Care is an annual functional medicine program that pairs you with a dedicated clinician for ongoing medical care throughout the year. Membership includes 5 provider visits, access to advanced diagnostics — like in-depth lab testing (billed to insurance) or specialty tests — a personalized care plan, functional nutrition coaching visits, and exclusive perks. Your care team, led by your board-certified clinician, supports you in establishing, implementing, and adjusting your care plan as your health evolves."
+    "question": "How does Abubakar Health’s Clinical Lab Review visit differ from the Complete Care program?",
+    "answer": "Our Clinical Lab Review is a single 30-minute virtual visit with a board-certified clinician focused on interpreting your blood test results to give you with a clear action plan and next steps. It's a great starting point if you want to better understand your lab test results or want to experience Abubakar Health's functional medicine care before committing to the annual program.<br/><br/>Complete Care is an annual functional medicine program that pairs you with a dedicated clinician for ongoing medical care throughout the year. Membership includes 5 provider visits, access to advanced diagnostics — like in-depth lab testing (billed to insurance) or specialty tests — a personalized care plan, functional nutrition coaching visits, and exclusive perks. Your care team, led by your board-certified clinician, supports you in establishing, implementing, and adjusting your care plan as your health evolves."
   },
   {
     "id": "supplements",
-    "question": "Can I purchase Parsley supplements without being a member?",
-    "answer": "Yes! Parsley Health supplements are available for purchase through our online store by both members and non-members. Members receive a 20% discount on Parsley-branded supplements, in addition to a 5% discount for any subscriptions."
+    "question": "Can I purchase Abubakar Health supplements without being a member?",
+    "answer": "Yes! Abubakar Health supplements are available for purchase through our online store by both members and non-members. Members receive a 20% discount on Abubakar Health-branded supplements, in addition to a 5% discount for any subscriptions."
   }
 ]

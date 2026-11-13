@@ -18,7 +18,7 @@ export default function Navbar() {
           {/* Logo wordmark in bone white matching screenshot */}
           <a href="/" className="flex items-center text-[#FAF8F5] hover:opacity-90 transition-opacity">
             <span className="font-sans text-[22px] font-semibold tracking-[-0.03em] text-[#FAF8F5]">
-              Parsley Health
+              Abubakar Health
             </span>
           </a>
 

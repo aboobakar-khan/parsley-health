@@ -1,6 +1,8 @@
-# Parsley Health Rebuild
+# Abubakar Health
 
-A faithful, modern full-stack reconstruction of [Parsley Health](https://www.parsleyhealth.com/) built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and modular JSON content models.
+A faithful, modern full-stack healthcare platform rebuild inspired by root-cause functional medicine, built with **Next.js 16 (App Router)**, **React 19**, **TypeScript**, **Tailwind CSS**, **Framer Motion**, and modular JSON content models.
+
+**Founder / Developer:** [Aboobakar Khan](https://www.linkedin.com/in/aboobakarkhan/)
 
 ---
 
@@ -8,7 +10,7 @@ A faithful, modern full-stack reconstruction of [Parsley Health](https://www.par
 
 - **Announcement Banner:** FSA/HSA verification notice with dismissible action.
 - **Top Navigation Bar:**
-  - `Parsley Health` wordmark.
+  - `Abubakar Health` wordmark.
   - Interactive two-column dropdown mega menus for *Complete Care Membership*, *Clinical Lab Review*, and *What We Treat* (11 condition categories).
   - Clover green hover underline micro-interaction (`#4CAF7D`).
   - Right CTAs: `Join now` white pill button + `Log in →` with arrow.
@@ -28,13 +30,15 @@ A faithful, modern full-stack reconstruction of [Parsley Health](https://www.par
   - 89% member symptom improvement stat.
   - 9:16 portrait member story video cards with play overlays and quotes.
 - **Comparison Matrix ("Get more out of medicine than you ever thought possible"):**
-  - Side-by-side feature comparison: PCP vs Functional Medicine vs Concierge vs **Parsley Health**.
+  - Side-by-side feature comparison: PCP vs Functional Medicine vs Concierge vs **Abubakar Health**.
   - Solid rectangular mint column (`#BEE3D6`) across all 5 rows.
   - Overlapping floating pill CTA: `Verify insurance →`.
 - **Frequently Asked Questions:**
   - Sticky editorial sidebar with large serif typography.
   - Full-bleed border-divided accordion with smooth height & opacity expansion.
-- **Footer:** Pre-footer CTA banner + full 5-column sitemap, newsletter signup, and disclaimers.
+- **Coming Soon Catch-All Route:**
+  - Dynamic catch-all (`/[...slug]`) for upcoming features with smooth navigation and direct links back to home and LinkedIn.
+- **Footer:** Full 4-column sitemap, newsletter signup, HIPAA compliance emblem, social channels with direct [LinkedIn profile integration](https://www.linkedin.com/in/aboobakarkhan/), and complete legal disclosures.
 
 ---
 

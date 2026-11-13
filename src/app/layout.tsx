@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Parsley Health — Root Cause Medicine",
+  title: "Abubakar Health — Root Cause Medicine",
   description:
     "Medical care that uncovers the root cause of your symptoms. Functional medicine, now accessible with insurance nationwide.",
   keywords:
-    "functional medicine, root cause medicine, telehealth, insurance, parsley health",
+    "functional medicine, root cause medicine, telehealth, insurance, abubakar health",
   openGraph: {
-    title: "Parsley Health — Root Cause Medicine",
+    title: "Abubakar Health — Root Cause Medicine",
     description:
       "Board-certified functional medicine clinicians. Insurance accepted nationwide.",
     type: "website",

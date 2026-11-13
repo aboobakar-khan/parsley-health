@@ -19,10 +19,10 @@ export default function Testimonials() {
         {/* Featured Large Quote */}
         <div className="max-w-4xl mx-auto text-center mb-16">
           <blockquote className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed text-[#132D2E]">
-            &ldquo;I&apos;ve tried every method, doctor, and diet. Nothing has compared to the incredible care at Parsley that has made a massive difference in my healing after 10+ years of struggling.&rdquo;
+            &ldquo;I&apos;ve tried every method, doctor, and diet. Nothing has compared to the incredible care at Abubakar Health that has made a massive difference in my healing after 10+ years of struggling.&rdquo;
           </blockquote>
           <div className="mt-6 text-sm text-[#132D2E]/60 font-medium">
-            Verified Parsley Health Member
+            Verified Abubakar Health Member
           </div>
         </div>
 

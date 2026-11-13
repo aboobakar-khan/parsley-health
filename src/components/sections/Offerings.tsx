@@ -18,10 +18,10 @@ export default function Offerings() {
   return (
     <section className="bg-[#132D2E] py-16 lg:py-24 text-[#132D2E] overflow-hidden">
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-10">
-        {/* Section Header: Experience the Parsley Difference / Two ways to get started */}
+        {/* Section Header: Experience the Abubakar Health Difference / Two ways to get started */}
         <div className="flex flex-col items-center gap-3 text-center mb-12 sm:mb-16">
           <p className="text-xs font-semibold tracking-widest uppercase text-[#FAF8F5]/80 font-sans">
-            Experience the Parsley Difference
+            Experience the Abubakar Health Difference
           </p>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-tight text-[#FAF8F5]">
             Two ways to get started
@@ -31,7 +31,7 @@ export default function Offerings() {
         {/* Desktop Interactive Expanding Accordion Cards (lg:flex) */}
         <div
           role="radiogroup"
-          aria-label="Choose your Parsley experience"
+          aria-label="Choose your Abubakar Health experience"
           className="hidden lg:flex w-full gap-3 items-stretch min-h-[604px]"
         >
           {/* ── CARD 0: Complete Care Membership ── */}

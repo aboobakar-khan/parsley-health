@@ -49,11 +49,11 @@
     }
   ],
   "cta": {
-    "login": { "label": "Log in", "href": "https://my.parsleyhealth.com/login" },
+    "login": { "label": "Log in", "href": "/login" },
     "join": { "label": "Join now", "href": "/join/care" }
   },
   "announcement": {
-    "text": "Parsley is in-network nationwide and FSA/HSA eligible.",
+    "text": "Abubakar Health is in-network nationwide and FSA/HSA eligible.",
     "cta": { "label": "Verify insurance", "href": "/join/care?focus=insurance&entry=fsa-hsa-banner" }
   }
 }

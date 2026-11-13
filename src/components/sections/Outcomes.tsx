@@ -10,7 +10,7 @@ export default function Outcomes() {
       name: "Chelsea",
       quote: "Completely changed my physical and mental health.",
       image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fe25ec9e1b4c3403bb8f9cc3a40636f78?width=640&quality=75&format=webp",
-      alt: "Parsley Member Chelsea",
+      alt: "Abubakar Health Member Chelsea",
       showCta: true,
     },
     {
@@ -18,7 +18,7 @@ export default function Outcomes() {
       name: "Bethany",
       quote: "I started getting answers through extensive testing.",
       image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F677582783fa94c31a634ffbf187f306f?width=640&quality=75&format=webp",
-      alt: "Parsley Member Bethany",
+      alt: "Abubakar Health Member Bethany",
       showCta: false,
     },
     {
@@ -26,7 +26,7 @@ export default function Outcomes() {
       name: "Julie",
       quote: "Wow I might actually be able to fix this problem that I've dealt with my whole life.",
       image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fe27c31c07f794a62a8f85d2b1e85b054?width=640&quality=75&format=webp",
-      alt: "Parsley Member Julie",
+      alt: "Abubakar Health Member Julie",
       showCta: false,
     },
     {
@@ -34,7 +34,7 @@ export default function Outcomes() {
       name: "Christina",
       quote: "They don't just put a band-aid on a symptom.",
       image: "https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fe319d6282e194708b92df890ceaf2531?width=640&quality=75&format=webp",
-      alt: "Parsley Member Christina",
+      alt: "Abubakar Health Member Christina",
       showCta: false,
     },
   ];
@@ -89,7 +89,7 @@ export default function Outcomes() {
                 REAL RESULTS
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-light leading-[1.18] text-[#132D2E]">
-                89% of Parsley members improve or eliminate symptoms within a year
+                89% of Abubakar Health members improve or eliminate symptoms within a year
               </h2>
             </div>
 
@@ -170,9 +170,9 @@ export default function Outcomes() {
                 <div className="col-span-2 p-4 text-center leading-snug">
                   Concierge<br />Clinic
                 </div>
-                {/* Highlighted Parsley Health Column Header - perfectly flush mint block */}
+                {/* Highlighted Abubakar Health Column Header - perfectly flush mint block */}
                 <div className="col-span-2 p-5 text-center bg-[#BEE3D6] text-[#132D2E] font-medium leading-snug">
-                  Parsley Health
+                  Abubakar Health
                 </div>
               </div>
 
@@ -221,7 +221,7 @@ export default function Outcomes() {
                       )}
                     </div>
 
-                    {/* Parsley Health Column (Highlighted Mint Background) */}
+                    {/* Abubakar Health Column (Highlighted Mint Background) */}
                     <div className="col-span-2 p-5 flex justify-center text-center bg-[#BEE3D6]">
                       {row.parsley === "check" ? (
                         <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />

@@ -13,9 +13,9 @@
     { "label": "Why Our Providers", "href": "/labs/why-our-providers" }
   ],
   "aboutUs": [
-    { "label": "About Parsley", "href": "/company" },
+    { "label": "About Abubakar Health", "href": "/company" },
     { "label": "What We Offer", "href": "/our-services" },
-    { "label": "Parsley Symptom Index", "href": "/quiz" },
+    { "label": "Abubakar Health Symptom Index", "href": "/quiz" },
     { "label": "Dr. Robin Berzin", "href": "/robin-berzin-md" },
     { "label": "Reviews", "href": "/reviews" }
   ],
@@ -39,5 +39,5 @@
     { "label": "Notice of Privacy Practices", "href": "/notice-of-privacy-practices" },
     { "label": "Accessibility Statement", "href": "/accessibility" }
   ],
-  "copyright": "© Parsley Health, all rights reserved 126 5th Ave, Fl 2, New York, NY 10011"
+  "copyright": "© Abubakar Health, all rights reserved 126 5th Ave, Fl 2, New York, NY 10011"
 }

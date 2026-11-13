@@ -13,7 +13,7 @@ export default function Footer() {
             {/* Wordmark */}
             <a href="/" className="inline-block text-[#FAF8F5] hover:opacity-90 transition-opacity">
               <span className="font-sans text-[26px] font-semibold tracking-[-0.03em] text-white">
-                Parsley Health
+                Abubakar Health
               </span>
             </a>
 
@@ -41,17 +41,17 @@ export default function Footer() {
               </form>
             </div>
 
-            {/* Share Parsley & HIPAA Emblem */}
+            {/* Share Abubakar Health & HIPAA Emblem */}
             <div className="mt-8">
               <h3 className="text-sm font-medium text-[#4CAF7D] mb-3">
-                Share Parsley
+                Share Abubakar Health
               </h3>
               <div className="flex items-center gap-4 text-white">
                 {/* Social Icons */}
                 <div className="flex items-center gap-3">
                   {/* Facebook */}
                   <a
-                    href="https://www.facebook.com/parsleyhealth/"
+                    href="https://www.facebook.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Facebook"
@@ -64,7 +64,7 @@ export default function Footer() {
 
                   {/* Instagram */}
                   <a
-                    href="https://www.instagram.com/parsleyhealth/"
+                    href="https://www.instagram.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
@@ -75,12 +75,12 @@ export default function Footer() {
                     </svg>
                   </a>
 
-                  {/* LinkedIn */}
+                  {/* LinkedIn -> Aboobakar Khan profile */}
                   <a
-                    href="https://www.linkedin.com/company/parsley-health"
+                    href="https://www.linkedin.com/in/aboobakarkhan/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="LinkedIn"
+                    aria-label="Aboobakar Khan LinkedIn Profile"
                     className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-white transition-all text-[#FAF8F5]"
                   >
                     <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
@@ -190,12 +190,12 @@ export default function Footer() {
 
             {/* CTA Buttons matching screenshot */}
             <div className="mt-8 flex flex-col gap-3 w-full max-w-[280px]">
-              {/* Peach Pill Button: Join Parsley */}
+              {/* Peach Pill Button: Join Abubakar Health */}
               <a
                 href="/join/care"
                 className="inline-flex items-center justify-center rounded-full bg-[#ECC8AE] text-[#132D2E] py-3.5 px-6 text-sm font-medium shadow-sm hover:opacity-95 transition-opacity text-center whitespace-nowrap"
               >
-                Join Parsley
+                Join Abubakar Health
               </a>
 
               {/* Outline Pill Button: Speak with an advisor */}

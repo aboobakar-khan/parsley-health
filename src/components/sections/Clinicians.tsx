@@ -7,7 +7,7 @@ export default function Clinicians() {
   const credentials = [
     "Board-certified, with advanced functional medicine training",
     "Can prescribe medication when needed, including GLP-1s and hormone therapies",
-    "Track your health progress via clinically validated Parsley Symptom Index (PSI)",
+    "Track your health progress via clinically validated Abubakar Health Symptom Index (AHSI)",
   ];
 
   return (
@@ -25,13 +25,13 @@ export default function Clinicians() {
             <div className="relative overflow-hidden rounded-3xl bg-[#DCCBAF] shadow-lg aspect-[4/5] max-w-md mx-auto">
               <img
                 src="https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F488dfa40ea544a4a85bc137b856bc79a?width=1080&quality=80&format=webp"
-                alt="Dr. Robin Berzin, MD – Functional Medicine Physician and Founder of Parsley Health"
+                alt="Dr. Robin Berzin, MD – Functional Medicine Physician and Co-Founder at Abubakar Health"
                 className="h-full w-full object-cover object-top"
               />
               <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-6 text-white">
                 <div className="font-serif text-xl sm:text-2xl font-light">Dr. Robin Berzin, MD</div>
                 <div className="text-xs text-white/80 mt-1 font-normal">
-                  Functional Medicine Physician &amp; Founder of Parsley Health
+                  Functional Medicine Physician &amp; Co-Founder at Abubakar Health
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@ export default function Clinicians() {
               Work with functional medicine experts who look deeper
             </h2>
             <p className="mt-6 text-base sm:text-lg text-[#132D2E]/85 leading-relaxed font-normal">
-              Parsley clinicians are board-certified and experienced in conventional, functional, and longevity medicine.
+              Abubakar Health clinicians are board-certified and experienced in conventional, functional, and longevity medicine.
             </p>
 
             <ul className="mt-8 space-y-4">
