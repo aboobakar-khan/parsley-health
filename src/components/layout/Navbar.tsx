@@ -1,23 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import navData from "@/data/nav.json";
-import { ArrowRight, Menu, X } from "lucide-react";
+import {
+  ArrowRight,
+  MoreHorizontal,
+  Menu,
+  X,
+  ChevronDown,
+  Home,
+  HeartPulse,
+  FlaskConical,
+  ShieldCheck,
+} from "lucide-react";
 
 export default function Navbar() {
   const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openAccordion, setOpenAccordion] = useState<string | null>(null);
 
   const cubicEase = [0.22, 1, 0.36, 1] as const;
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
+      {/* ── TOP NAVBAR ── */}
       <header className="sticky top-0 z-50 w-full bg-[#132D2E] border-b border-white/5 transition-colors">
-        <div className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-6 lg:px-10">
-          {/* Logo wordmark in bone white matching screenshot */}
-          <a href="/" className="flex items-center text-[#FAF8F5] hover:opacity-90 transition-opacity">
-            <span className="font-sans text-[22px] font-semibold tracking-[-0.03em] text-[#FAF8F5]">
+        <div className="mx-auto flex h-[72px] sm:h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-6 lg:px-10">
+          {/* Logo wordmark */}
+          <a
+            href="/"
+            className="flex items-center text-[#FAF8F5] hover:opacity-90 transition-opacity"
+          >
+            <span className="font-sans text-[21px] sm:text-[22px] font-semibold tracking-[-0.03em] text-[#FAF8F5]">
               Abubakar Health
             </span>
           </a>
@@ -52,7 +79,7 @@ export default function Navbar() {
                     )}
                   </a>
 
-                  {/* Dropdown Menu (Exact 2-column white card matching screenshot) */}
+                  {/* Dropdown Menu (Exact 2-column white card) */}
                   <AnimatePresence>
                     {hasSubmenu && isHovered && (
                       <motion.div
@@ -64,7 +91,6 @@ export default function Navbar() {
                       >
                         <div className="bg-white rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.18)] border border-black/5 p-8 sm:p-10">
                           {link.label === "What We Treat" ? (
-                            /* 2-column condition categories grid */
                             <div className="grid grid-cols-2 gap-x-12 gap-y-4 min-w-[500px]">
                               {link.submenu?.map((sub) => (
                                 <a
@@ -77,7 +103,6 @@ export default function Navbar() {
                               ))}
                             </div>
                           ) : (
-                            /* 2-column menu layout for Complete Care & Lab Review */
                             <div className="grid grid-cols-2 gap-x-12 gap-y-5 min-w-[420px]">
                               {link.submenu?.map((sub) => (
                                 <a
@@ -101,7 +126,6 @@ export default function Navbar() {
 
           {/* Desktop Right CTAs: [Join now] button + [Log in ->] link */}
           <div className="hidden lg:flex items-center gap-5 xl:gap-6">
-            {/* White Pill Button: Join now */}
             <a
               href={navData.cta.join.href}
               className="rounded-full bg-white text-[#132D2E] px-6 py-2.5 text-sm font-medium shadow-sm hover:bg-[#FAF8F5] transition-all whitespace-nowrap"
@@ -109,7 +133,6 @@ export default function Navbar() {
               {navData.cta.join.label}
             </a>
 
-            {/* Log in with arrow */}
             <a
               href={navData.cta.login.href}
               className="text-sm font-medium text-[#FAF8F5] flex items-center gap-1.5 hover:text-white hover:underline hover:underline-offset-[7px] hover:decoration-[#4CAF7D] transition-all whitespace-nowrap"
@@ -119,65 +142,247 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Top Menu Button (3 Dots / Hamburger Toggle) */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden rounded-lg p-2 text-[#FAF8F5]"
+            className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 text-[#FAF8F5] hover:bg-white/15 active:scale-95 transition-all"
             aria-label="Toggle navigation menu"
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <MoreHorizontal className="h-5 w-5" />
+            )}
           </button>
         </div>
       </header>
 
-      {/* Mobile Drawer */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 top-[120px] z-40 bg-[#132D2E] px-6 py-8 lg:hidden overflow-y-auto">
-          <nav className="flex flex-col gap-4 text-[#FAF8F5]">
-            {navData.links.map((link) => (
-              <div key={link.href} className="border-b border-white/10 pb-3">
-                <a
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-lg font-medium block"
-                >
-                  {link.label}
-                </a>
-                {link.submenu && (
-                  <div className="mt-2 pl-4 flex flex-col gap-2">
-                    {link.submenu.slice(0, 4).map((sub) => (
-                      <a
-                        key={sub.title}
-                        href={sub.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="text-sm text-white/70 hover:text-white"
-                      >
-                        {sub.title}
-                      </a>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-            <div className="mt-6 flex flex-col gap-3">
+      {/* ── MOBILE DRAWER NAVIGATION MENU (Ivory Background Matching Real Parsley Health) ── */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[100] lg:hidden flex flex-col bg-[#FAF8F5]"
+          >
+            {/* Drawer Header with Logo & Close Button */}
+            <div className="flex items-center justify-between px-6 h-[72px] bg-[#132D2E] border-b border-white/10 flex-shrink-0">
               <a
-                href={navData.cta.join.href}
-                className="flex items-center justify-center rounded-full bg-white py-3 text-base font-medium text-[#132D2E]"
+                href="/"
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-sans text-[20px] font-semibold tracking-[-0.03em] text-[#FAF8F5]"
               >
-                {navData.cta.join.label}
+                Abubakar Health
               </a>
-              <a
-                href={navData.cta.login.href}
-                className="flex items-center justify-center gap-2 rounded-full border border-white/30 py-3 text-base font-medium text-[#FAF8F5]"
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-[#FAF8F5] hover:bg-white/20 active:scale-95 transition-all"
+                aria-label="Close menu"
               >
-                <span>{navData.cta.login.label}</span>
-                <ArrowRight className="h-4 w-4" />
-              </a>
+                <X className="w-5 h-5" />
+              </button>
             </div>
-          </nav>
+
+            {/* Drawer Body: Main Categories (Submenus revealed only on click) */}
+            <div className="flex-1 overflow-y-auto px-6 py-6 pb-28">
+              <nav
+                className="flex flex-col divide-y divide-[#132D2E]/10"
+                aria-label="Mobile navigation"
+              >
+                {navData.links.map((link) => {
+                  const hasSubmenu = Boolean(link.submenu && link.submenu.length > 0);
+                  const isExpanded = openAccordion === link.label;
+
+                  if (!hasSubmenu) {
+                    /* Direct Main Link (e.g. Pricing & Insurance, Supplements) */
+                    return (
+                      <div key={link.label} className="py-2">
+                        <a
+                          href={link.href}
+                          onClick={() => setMobileMenuOpen(false)}
+                          className="flex items-center justify-between py-3.5 px-2 text-[17px] font-medium text-[#132D2E] hover:text-[#4CAF7D] transition-colors"
+                        >
+                          <span>{link.label}</span>
+                          <ArrowRight className="w-4 h-4 text-[#132D2E]/40" />
+                        </a>
+                      </div>
+                    );
+                  }
+
+                  /* Main Category with Submenu Accordion */
+                  return (
+                    <div key={link.label} className="py-2">
+                      <button
+                        onClick={() =>
+                          setOpenAccordion(isExpanded ? null : link.label)
+                        }
+                        className="flex w-full items-center justify-between py-3.5 px-2 text-left text-[17px] font-medium text-[#132D2E] hover:text-[#4CAF7D] active:text-[#4CAF7D] transition-colors"
+                        aria-expanded={isExpanded}
+                      >
+                        <span>{link.label}</span>
+                        <span
+                          className={`transition-transform duration-300 ${
+                            isExpanded
+                              ? "rotate-180 text-[#4CAF7D]"
+                              : "text-[#132D2E]/40"
+                          }`}
+                        >
+                          <ChevronDown className="w-5 h-5" />
+                        </span>
+                      </button>
+
+                      {/* Smooth Sub-menu Expand / Collapse */}
+                      <AnimatePresence initial={false}>
+                        {isExpanded && (
+                          <motion.div
+                            initial={{ height: 0, opacity: 0 }}
+                            animate={{ height: "auto", opacity: 1 }}
+                            exit={{ height: 0, opacity: 0 }}
+                            transition={{
+                              duration: 0.28,
+                              ease: [0.22, 1, 0.36, 1],
+                            }}
+                            className="overflow-hidden"
+                          >
+                            <div className="ml-3 pl-5 pb-3 pt-1 border-l-2 border-[#4CAF7D]/35 flex flex-col gap-3">
+                              {link.submenu?.map((sub) => (
+                                <a
+                                  key={sub.title}
+                                  href={sub.href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="text-[15px] font-normal text-[#132D2E]/75 hover:text-[#132D2E] active:text-[#4CAF7D] py-1 transition-colors block"
+                                >
+                                  {sub.title}
+                                </a>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                })}
+              </nav>
+
+              {/* Action Buttons in Drawer */}
+              <div className="mt-8 flex flex-col gap-3">
+                <a
+                  href={navData.cta.join.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center rounded-full bg-[#132D2E] py-4 text-center text-sm font-medium text-white shadow-md hover:bg-[#1B3340] active:scale-[0.99] transition-all"
+                >
+                  {navData.cta.join.label}
+                </a>
+
+                <a
+                  href={navData.cta.login.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-full border border-[#132D2E]/25 py-3.5 text-center text-sm font-medium text-[#132D2E] hover:bg-[#132D2E]/5 transition-all"
+                >
+                  <span>{navData.cta.login.label}</span>
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+
+                {/* LinkedIn / Abubakar Health Profile Pill */}
+                <div className="mt-4 pt-4 border-t border-[#132D2E]/10 text-center">
+                  <a
+                    href="https://www.linkedin.com/in/aboobakarkhan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-[#132D2E]/60 hover:text-[#132D2E] transition-colors"
+                  >
+                    <span>Connect with Abubakar Khan on LinkedIn</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* ── MOBILE BOTTOM NAVIGATION BAR (Fixed Thumb-Friendly Dock) ── */}
+      <aside
+        aria-label="Mobile quick navigation"
+        className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-[#132D2E]/95 backdrop-blur-md border-t border-white/10 px-3 py-2 pb-[max(8px,env(safe-area-inset-bottom))] shadow-[0_-10px_25px_rgba(0,0,0,0.3)] transition-all"
+      >
+        <div className="grid grid-cols-5 items-center max-w-md mx-auto">
+          {/* Tab 1: Home */}
+          <a
+            href="/"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5]/75 hover:text-[#FAF8F5] active:text-[#4CAF7D] transition-colors group"
+          >
+            <Home className="w-5 h-5 transition-transform group-active:scale-90" />
+            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-1">
+              Home
+            </span>
+          </a>
+
+          {/* Tab 2: Care */}
+          <a
+            href="/care"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5]/75 hover:text-[#FAF8F5] active:text-[#4CAF7D] transition-colors group"
+          >
+            <HeartPulse className="w-5 h-5 transition-transform group-active:scale-90" />
+            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-1">
+              Care
+            </span>
+          </a>
+
+          {/* Tab 3: Labs */}
+          <a
+            href="/labs"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5]/75 hover:text-[#FAF8F5] active:text-[#4CAF7D] transition-colors group"
+          >
+            <FlaskConical className="w-5 h-5 transition-transform group-active:scale-90" />
+            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-1">
+              Labs
+            </span>
+          </a>
+
+          {/* Tab 4: Verify Insurance Highlighted Pill */}
+          <a
+            href="/join/care"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex flex-col items-center justify-center py-1 text-[#FAF8F5] transition-colors group"
+          >
+            <div className="w-10 h-7 rounded-full bg-[#BEE3D6] text-[#132D2E] flex items-center justify-center shadow-sm group-active:scale-95 transition-transform">
+              <ShieldCheck className="w-4 h-4 text-[#132D2E]" />
+            </div>
+            <span className="text-[10px] sm:text-[11px] font-semibold text-[#BEE3D6] tracking-tight mt-0.5">
+              Verify
+            </span>
+          </a>
+
+          {/* Tab 5: 3-Dot Menu Button -> Opens Mobile Drawer with Accordion */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className={`flex flex-col items-center justify-center py-1 transition-colors group ${
+              mobileMenuOpen
+                ? "text-[#4CAF7D]"
+                : "text-[#FAF8F5]/75 hover:text-[#FAF8F5]"
+            }`}
+            aria-label="Open full menu"
+          >
+            <div
+              className={`w-7 h-7 rounded-full flex items-center justify-center transition-colors ${
+                mobileMenuOpen ? "bg-[#4CAF7D]/20 text-[#4CAF7D]" : ""
+              }`}
+            >
+              <MoreHorizontal className="w-5 h-5 transition-transform group-active:scale-90" />
+            </div>
+            <span className="text-[10px] sm:text-[11px] font-medium tracking-tight mt-0.5">
+              Menu
+            </span>
+          </button>
         </div>
-      )}
+      </aside>
     </>
   );
 }
