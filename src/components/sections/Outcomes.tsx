@@ -157,39 +157,45 @@ export default function Outcomes() {
 
           {/* Comparison Table */}
           <div className="overflow-x-auto pb-4">
-            <div className="min-w-[700px] border-t border-[#132D2E]/15">
+            <div className="min-w-[700px] border-t border-[#132D2E]/15 relative">
+              {/* Continuous 100% Solid Mint Slab for Abubakar Health Column - ZERO GAPS, Pure Paint-like */}
+              <div
+                className="absolute right-0 top-0 bottom-0 w-[calc(100%*2/12)] bg-[#BEE3D6] pointer-events-none z-0"
+                aria-hidden="true"
+              />
+
               {/* Table Header */}
-              <div className="grid grid-cols-12 items-end border-b border-[#132D2E]/15 text-sm font-medium text-[#132D2E]">
-                <div className="col-span-4 p-4 md:p-6" />
-                <div className="col-span-2 p-4 text-center leading-snug">
+              <div className="grid grid-cols-12 items-stretch text-sm font-medium text-[#132D2E] relative z-10">
+                <div className="col-span-4 p-4 md:p-6 border-b border-[#132D2E]/15" />
+                <div className="col-span-2 p-4 text-center leading-snug flex flex-col justify-end border-b border-[#132D2E]/15">
                   Primary Care<br />Provider
                 </div>
-                <div className="col-span-2 p-4 text-center leading-snug">
+                <div className="col-span-2 p-4 text-center leading-snug flex flex-col justify-end border-b border-[#132D2E]/15">
                   Functional<br />Medicine Clinic
                 </div>
-                <div className="col-span-2 p-4 text-center leading-snug">
+                <div className="col-span-2 p-4 text-center leading-snug flex flex-col justify-end border-b border-[#132D2E]/15">
                   Concierge<br />Clinic
                 </div>
-                {/* Highlighted Abubakar Health Column Header - perfectly flush mint block */}
-                <div className="col-span-2 p-5 text-center bg-[#BEE3D6] text-[#132D2E] font-medium leading-snug">
+                {/* Highlighted Abubakar Health Column Header - perfectly flush inside solid mint slab */}
+                <div className="col-span-2 p-5 text-center text-[#132D2E] font-medium leading-snug flex items-center justify-center">
                   Abubakar Health
                 </div>
               </div>
 
               {/* Table Rows */}
-              <div className="divide-y divide-[#132D2E]/15">
+              <div>
                 {comparisonRows.map((row) => (
                   <div
                     key={row.feature}
-                    className="grid grid-cols-12 items-center text-sm text-[#132D2E]"
+                    className="grid grid-cols-12 items-stretch text-sm text-[#132D2E] relative z-10"
                   >
                     {/* Feature Label */}
-                    <div className="col-span-4 p-4 md:p-6 font-normal text-base text-[#132D2E]">
+                    <div className="col-span-4 p-4 md:p-6 font-normal text-base text-[#132D2E] flex items-center border-b border-[#132D2E]/15">
                       {row.feature}
                     </div>
 
                     {/* Primary Care Provider */}
-                    <div className="col-span-2 p-4 flex justify-center text-center">
+                    <div className="col-span-2 p-4 flex items-center justify-center text-center border-b border-[#132D2E]/15">
                       {row.pcp === "check" ? (
                         <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
                       ) : row.pcp === "x" ? (
@@ -200,7 +206,7 @@ export default function Outcomes() {
                     </div>
 
                     {/* Functional Medicine Clinic */}
-                    <div className="col-span-2 p-4 flex justify-center text-center">
+                    <div className="col-span-2 p-4 flex items-center justify-center text-center border-b border-[#132D2E]/15">
                       {row.functional === "check" ? (
                         <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
                       ) : row.functional === "x" ? (
@@ -211,7 +217,7 @@ export default function Outcomes() {
                     </div>
 
                     {/* Concierge Clinic */}
-                    <div className="col-span-2 p-4 flex justify-center text-center">
+                    <div className="col-span-2 p-4 flex items-center justify-center text-center border-b border-[#132D2E]/15">
                       {row.concierge === "check" ? (
                         <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
                       ) : row.concierge === "x" ? (
@@ -221,8 +227,8 @@ export default function Outcomes() {
                       )}
                     </div>
 
-                    {/* Abubakar Health Column (Highlighted Mint Background) */}
-                    <div className="col-span-2 p-5 flex justify-center text-center bg-[#BEE3D6]">
+                    {/* Abubakar Health Column - perfectly transparent over continuous solid mint slab */}
+                    <div className="col-span-2 p-5 flex items-center justify-center text-center">
                       {row.parsley === "check" ? (
                         <Check className="h-5 w-5 text-[#132D2E] stroke-[2.5]" />
                       ) : (
