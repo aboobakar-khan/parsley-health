@@ -1,280 +1,371 @@
 "use client";
 
 import footerData from "@/data/footer.json";
+import HipaaLogo from "./HipaaLogo";
+import { ArrowRight } from "lucide-react";
 
 export default function Footer() {
-  return (
-    <footer className="bg-[#27484A] text-[#FAF8F5] pt-14 pb-12 w-full">
-      <div className="mx-auto max-w-[1280px] px-6 lg:px-10">
-        {/* ── TOP HORIZONTAL DIVIDER LINE MATCHING ORIGINAL ── */}
-        <div className="border-t border-[#4C7D75]/70 mb-12 sm:mb-14" />
+  const socialCards = [
+    {
+      id: "liver",
+      category: "Care Insight",
+      tagColor: "text-[#78C9A6]",
+      bg: "bg-[#1E3B3B]",
+      quote: "Your liver with regular alcohol vs without it.",
+      badge: "@abubakarhealth",
+      serif: true,
+    },
+    {
+      id: "gratitude",
+      category: "Mind & Body",
+      tagColor: "text-[#ECC8AE]",
+      bg: "bg-[#78613A]",
+      quote: "I'm grateful my body is healing every day.",
+      badge: "Community",
+      serif: true,
+    },
+    {
+      id: "hormones",
+      category: "Root Cause",
+      tagColor: "text-[#BEE3D6]",
+      bg: "bg-[#596944]",
+      quote: "Hormone symptoms are usually not just a hormone issue.",
+      badge: "Lab testing",
+      serif: false,
+    },
+    {
+      id: "bloat",
+      category: "Gut Health",
+      tagColor: "text-[#78C9A6]",
+      bg: "bg-[#243F3D]",
+      quote: "When and where you bloat says a lot about your microbiome.",
+      badge: "Digestion",
+      serif: false,
+    },
+    {
+      id: "myth-fact",
+      category: "Myth vs Fact",
+      tagColor: "text-[#ECC8AE]",
+      bg: "bg-[#2B4B52]",
+      quote: "Insulin resistance develops from repeat metabolic patterns over time.",
+      badge: "Metabolic",
+      serif: false,
+    },
+    {
+      id: "connection",
+      category: "Whole Picture",
+      tagColor: "text-[#78C9A6]",
+      bg: "bg-[#435252]",
+      quote: "Heavy periods, fatigue & brain fog: uncovering the root connection.",
+      badge: "Longevity",
+      serif: false,
+    },
+  ];
 
-        {/* ── MAIN 4-COLUMN FOOTER GRID ── */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-4">
-          {/* ── COLUMN 1: Brand Wordmark, Newsletter Pill, Socials & HIPAA (lg:col-span-4) ── */}
-          <div className="lg:col-span-4 flex flex-col items-start pr-4">
-            {/* Wordmark */}
-            <a href="/" className="inline-block hover:opacity-90 transition-opacity">
-              <span className="font-sans text-[26px] sm:text-[28px] font-semibold tracking-[-0.03em] text-[#FCFBFA]">
-                Abubakar Health
-              </span>
+  return (
+    <footer className="relative bg-[#284849] text-white py-12 px-6 sm:px-10 md:px-14 lg:py-20 lg:px-20 xl:px-28 w-full">
+      <div className="max-w-[1120px] mx-auto">
+        {/* ── TOP SECTION: Instagram & Community Editorial Grid ── */}
+        <div className="border-b border-[#4CAF7D]/35 pb-8 mb-8 lg:mb-14">
+          <div className="flex items-center justify-between mb-4 lg:mb-6">
+            <span className="text-[14px] font-medium text-[#78C9A6] tracking-wide">
+              @abubakarhealth
+            </span>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[14px] font-medium text-[#78C9A6] hover:opacity-80 transition-opacity"
+            >
+              <span>Follow Us</span>
+              <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
             </a>
+          </div>
+
+          {/* 6 High-Fidelity Editorial Cards Grid matching original SnapWidget embed */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
+            {socialCards.map((card) => (
+              <div
+                key={card.id}
+                className={`relative aspect-square rounded-xl overflow-hidden ${card.bg} p-4 flex flex-col justify-between text-white shadow-sm border border-white/5 hover:scale-[1.02] transition-transform cursor-pointer`}
+              >
+                <div className={`text-[10px] uppercase tracking-wider font-semibold ${card.tagColor}`}>
+                  {card.category}
+                </div>
+                <p
+                  className={`text-xs sm:text-[12.5px] leading-snug ${
+                    card.serif ? "font-serif italic font-light" : "font-sans font-medium"
+                  }`}
+                >
+                  &ldquo;{card.quote}&rdquo;
+                </p>
+                <span className="text-[10px] text-white/60 font-medium">
+                  {card.badge}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── MAIN NAVIGATION BLOCK ── */}
+        <div className="flex flex-col lg:flex-row gap-10 lg:gap-14 mb-8 lg:mb-14">
+          {/* ── COLUMN 1: Brand Wordmark, Newsletter, Socials & HIPAA ── */}
+          <div className="min-w-[280px] lg:min-w-[300px] flex-shrink-0">
+            {/* Wordmark */}
+            <div className="mb-7">
+              <a href="/" className="inline-block hover:opacity-90 transition-opacity">
+                <span className="font-sans text-[26px] sm:text-[28px] font-semibold tracking-[-0.03em] text-white">
+                  Abubakar Health
+                </span>
+              </a>
+            </div>
 
             {/* Newsletter */}
-            <div className="mt-8 w-full max-w-[315px]">
-              <h3 className="text-[14.5px] font-medium text-[#6FB29F] mb-3 tracking-wide">
-                Sign up for our newsletter
-              </h3>
-              <form
-                onSubmit={(e) => e.preventDefault()}
-                className="flex items-center rounded-full bg-white p-1 shadow-sm"
-              >
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  required
-                  className="w-full rounded-l-full bg-transparent px-4 py-2 text-sm text-[#27484A] placeholder:text-[#27484A]/60 focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="rounded-full bg-[#5DA188] hover:bg-[#4E8F77] text-white px-5 py-2.5 text-sm font-medium transition-colors whitespace-nowrap cursor-pointer shadow-sm"
-                >
-                  Sign Up
-                </button>
+            <div className="mb-8">
+              <form onSubmit={(e) => e.preventDefault()}>
+                <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3">
+                  Sign up for our newsletter
+                </h3>
+                <div className="flex">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                    className="flex w-full px-4 py-2 h-12 shadow-sm border border-[#4CAF7D]/25 rounded-l-full bg-white text-[#284849] placeholder:text-[#284849]/60 text-sm focus:outline-none"
+                  />
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center rounded-r-full font-medium min-h-[46px] text-white bg-[#4CAF7D] hover:bg-[#3d9468] h-12 min-w-[90px] px-4 text-[15px] transition-colors cursor-pointer whitespace-nowrap"
+                  >
+                    Sign Up
+                  </button>
+                </div>
               </form>
             </div>
 
-            {/* Share Abubakar Health & HIPAA Emblem */}
-            <div className="mt-9">
-              <h3 className="text-[14.5px] font-medium text-[#6FB29F] mb-3.5 tracking-wide">
+            {/* Social Channels & HIPAA */}
+            <div>
+              <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3">
                 Share Abubakar Health
               </h3>
-              <div className="flex items-center gap-4 text-white">
-                {/* Social Icons */}
-                <div className="flex items-center gap-3">
+              <div className="flex flex-wrap items-center gap-4 text-white">
+                <ul className="flex gap-2 text-white items-center">
                   {/* Facebook */}
-                  <a
-                    href="https://www.facebook.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Facebook"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-white transition-all text-[#FAF8F5]"
-                  >
-                    <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                    </svg>
-                  </a>
+                  <li className="w-9 h-9 flex items-center justify-center flex-shrink-0">
+                    <a
+                      href="https://www.facebook.com/"
+                      aria-label="Facebook"
+                      className="hover:text-gray-300 transition-colors"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg height="24" viewBox="6 6 24 24" width="24" className="w-6 h-6 fill-current">
+                        <path d="M30 18C30 11.3726 24.6274 6 18 6C11.3726 6 6 11.3726 6 18C6 23.9895 10.3882 28.954 16.125 29.8542V21.4687H13.0781V18H16.125V15.3562C16.125 12.3488 17.9166 10.6875 20.6576 10.6875C21.9701 10.6875 23.3438 10.9219 23.3438 10.9219V13.875H21.8306C20.34 13.875 19.875 14.8001 19.875 15.75V18H23.2031L22.6711 21.4687H19.875V29.8542C25.6118 28.954 30 23.9895 30 18Z" />
+                      </svg>
+                    </a>
+                  </li>
 
                   {/* Instagram */}
-                  <a
-                    href="https://www.instagram.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Instagram"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-white transition-all text-[#FAF8F5]"
-                  >
-                    <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                    </svg>
-                  </a>
+                  <li className="w-9 h-9 flex items-center justify-center flex-shrink-0">
+                    <a
+                      href="https://www.instagram.com/"
+                      aria-label="Instagram"
+                      className="hover:text-gray-300 transition-colors"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 512 512" className="w-6 h-6">
+                        <path d="M352 0H160C71.648 0 0 71.648 0 160v192c0 88.352 71.648 160 160 160h192c88.352 0 160-71.648 160-160V160C512 71.648 440.352 0 352 0m112 352c0 61.76-50.24 112-112 112H160c-61.76 0-112-50.24-112-112V160C48 98.24 98.24 48 160 48h192c61.76 0 112 50.24 112 112z" />
+                        <path d="M256 128c-70.688 0-128 57.312-128 128s57.312 128 128 128 128-57.312 128-128-57.312-128-128-128m0 208c-44.096 0-80-35.904-80-80 0-44.128 35.904-80 80-80s80 35.872 80 80c0 44.096-35.904 80-80 80" />
+                        <circle cx="393.6" cy="118.4" r="17.056" />
+                      </svg>
+                    </a>
+                  </li>
 
-                  {/* LinkedIn -> Aboobakar Khan profile */}
-                  <a
-                    href="https://www.linkedin.com/in/aboobakarkhan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Aboobakar Khan LinkedIn Profile"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-white transition-all text-[#FAF8F5]"
-                  >
-                    <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                    </svg>
-                  </a>
+                  {/* LinkedIn -> Aboobakar Khan Profile */}
+                  <li className="w-9 h-9 flex items-center justify-center flex-shrink-0">
+                    <a
+                      href="https://www.linkedin.com/in/aboobakarkhan/"
+                      aria-label="Aboobakar Khan LinkedIn"
+                      className="hover:text-gray-300 transition-colors"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="none" className="w-6 h-6">
+                        <path fill="#fff" fillRule="evenodd" d="M2.556 23h17.888A2.556 2.556 0 0 0 23 20.444V2.556A2.556 2.556 0 0 0 20.444 0H2.556A2.556 2.556 0 0 0 0 2.556v17.888A2.556 2.556 0 0 0 2.556 23" clipRule="evenodd" />
+                        <path fill="#284849" fillRule="evenodd" d="M19.805 19.806h-3.413v-5.814c0-1.594-.605-2.484-1.867-2.484-1.372 0-2.09.927-2.09 2.484v5.814H9.148V8.732h3.289v1.491s.989-1.83 3.339-1.83 4.03 1.435 4.03 4.401zM5.223 7.28a2.036 2.036 0 0 1-2.029-2.043c0-1.129.908-2.044 2.029-2.044S7.25 4.11 7.25 5.238A2.035 2.035 0 0 1 5.223 7.28M3.524 19.806h3.43V8.732h-3.43z" clipRule="evenodd" />
+                      </svg>
+                    </a>
+                  </li>
 
                   {/* YouTube */}
-                  <a
-                    href="https://www.youtube.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="YouTube"
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 hover:text-white transition-all text-[#FAF8F5]"
-                  >
-                    <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
-                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                    </svg>
-                  </a>
-                </div>
+                  <li className="w-9 h-9 flex items-center justify-center flex-shrink-0">
+                    <a
+                      href="https://www.youtube.com/"
+                      aria-label="YouTube"
+                      className="hover:text-gray-300 transition-colors"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" className="w-7 h-7">
+                        <path fill="#fff" d="M29.76 13.642s-.233-1.654-.955-2.381c-.914-.956-1.936-.961-2.405-1.017C23.044 10 18.005 10 18.005 10h-.01s-5.039 0-8.395.244c-.469.056-1.49.06-2.405 1.017-.722.727-.951 2.381-.951 2.381S6 15.588 6 17.528v1.819c0 1.94.24 3.886.24 3.886s.233 1.654.95 2.381c.915.956 2.115.924 2.65 1.027 1.92.182 8.16.239 8.16.239s5.044-.01 8.4-.249c.469-.056 1.49-.06 2.405-1.017.722-.727.956-2.381.956-2.381s.239-1.94.239-3.886v-1.819c0-1.94-.24-3.886-.24-3.886m-14.24 7.913v-6.746l6.483 3.385z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
 
-                {/* HIPAA Compliant Emblem */}
-                <div className="flex items-center gap-1.5 pl-3 opacity-95 hover:opacity-100 transition-opacity">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="h-8 w-8 text-white"
-                  >
-                    <path
-                      d="M12 2v20M12 2a4 4 0 0 1 4 4c0 3-4 5-4 8M12 2a4 4 0 0 0-4 4c0 3 4 5 4 8"
-                      strokeLinecap="round"
-                    />
-                    <circle cx="12" cy="2" r="1.5" fill="currentColor" />
-                    <path d="M8 8h8M7 12h10" strokeLinecap="round" />
-                  </svg>
-                  <div className="flex flex-col text-[9.5px] uppercase font-bold tracking-tight text-white leading-tight">
-                    <span>HIPAA</span>
-                    <span>COMPLIANT</span>
-                  </div>
+                {/* Official Vector HIPAA Compliant Emblem from REA */}
+                <div className="pl-2">
+                  <HipaaLogo className="h-9 w-auto text-white" />
                 </div>
               </div>
             </div>
           </div>
 
-          {/* ── COLUMN 2: Complete Care & Clinical Lab Review (lg:col-span-3) ── */}
-          <div className="lg:col-span-3 flex flex-col gap-9">
-            {/* Complete Care Group */}
-            <div>
-              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
-                Complete Care
-              </h3>
-              <ul className="space-y-2.5">
-                {footerData.completeCare.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+          {/* ── RIGHT COLUMNS: Navigation & Actions ── */}
+          <div className="flex flex-1 flex-wrap sm:flex-nowrap justify-between gap-8 lg:gap-12">
+            {/* COLUMN 2: Complete Care & Clinical Lab Review */}
+            <div className="min-w-[140px] max-w-[200px]">
+              <div>
+                <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+                  Complete Care
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.completeCare.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] sm:text-[14px] text-white/90 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="mt-8">
+                <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+                  Clinical Lab Review
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.clinicalLabReview.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] sm:text-[14px] text-white/90 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            {/* Clinical Lab Review Group */}
-            <div>
-              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
-                Clinical Lab Review
-              </h3>
-              <ul className="space-y-2.5">
-                {footerData.clinicalLabReview.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            {/* COLUMN 3: About Us + CTA Buttons */}
+            <div className="min-w-[150px] max-w-[210px]">
+              <div>
+                <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+                  About Us
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.aboutUs.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] sm:text-[14px] text-white/90 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* ── COLUMN 3: About Us & Action Buttons (lg:col-span-3) ── */}
-          <div className="lg:col-span-3 flex flex-col">
-            <div>
-              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
-                About Us
-              </h3>
-              <ul className="space-y-2.5">
-                {footerData.aboutUs.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              {/* Exact CTA Buttons matching original REA dump */}
+              <div className="mt-8 space-y-3">
+                <a
+                  href="/join/care"
+                  className="inline-flex items-center justify-center rounded-full bg-[#EBCFB8] text-[#284849] hover:bg-white transition-colors py-3 px-6 text-sm font-medium w-full text-center whitespace-nowrap shadow-sm"
+                >
+                  Join Abubakar Health
+                </a>
+
+                <a
+                  href="/contact"
+                  className="inline-flex items-center justify-center rounded-full border border-[#EBCFB8] text-white hover:border-white transition-colors py-3 px-6 text-sm font-medium w-full text-center whitespace-nowrap"
+                >
+                  Speak with an advisor
+                </a>
+              </div>
             </div>
 
-            {/* CTA Buttons placed below About Us links */}
-            <div className="mt-8 flex flex-col gap-3.5 w-full max-w-[210px]">
-              {/* Peach Pill Button: Join Abubakar Health */}
-              <a
-                href="/join/care"
-                className="inline-flex items-center justify-center rounded-full bg-[#EBCFB8] text-[#27484A] py-3 px-6 text-sm font-medium shadow-sm hover:bg-[#dfc2aa] transition-colors text-center whitespace-nowrap"
-              >
-                Join Abubakar Health
-              </a>
+            {/* COLUMN 4: Resources & Centers */}
+            <div className="min-w-[140px] max-w-[200px]">
+              <div>
+                <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+                  Resources
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.resources.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] sm:text-[14px] text-white/90 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              {/* Outline Pill Button: Speak with an advisor */}
-              <a
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-full border border-[#EACEB7] text-[#FAF8F5] py-3 px-6 text-sm font-medium hover:border-white transition-colors text-center whitespace-nowrap"
-              >
-                Speak with an advisor
-              </a>
-            </div>
-          </div>
-
-          {/* ── COLUMN 4: Resources & Centers (lg:col-span-2) ── */}
-          <div className="lg:col-span-2 flex flex-col gap-9">
-            {/* Resources Group */}
-            <div>
-              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
-                Resources
-              </h3>
-              <ul className="space-y-2.5">
-                {footerData.resources.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Centers Group */}
-            <div>
-              <h3 className="text-[15px] font-medium text-[#6FB29F] mb-3 whitespace-nowrap tracking-wide">
-                Centers
-              </h3>
-              <ul className="space-y-2.5">
-                {footerData.centers.map((item) => (
-                  <li key={item.label}>
-                    <a
-                      href={item.href}
-                      className="text-[13.5px] sm:text-[14px] text-[#FAF8F5]/90 hover:text-white hover:underline hover:underline-offset-4 decoration-[#6FB29F] transition-all"
-                    >
-                      {item.label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
+              <div className="mt-8">
+                <h3 className="text-[15px] font-medium text-[#4CAF7D] mb-3 whitespace-nowrap">
+                  Centers
+                </h3>
+                <ul className="space-y-2">
+                  {footerData.centers.map((item) => (
+                    <li key={item.label}>
+                      <a
+                        href={item.href}
+                        className="text-[13.5px] sm:text-[14px] text-white/90 hover:text-white transition-colors"
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* ── BOTTOM HORIZONTAL DIVIDER LINE & LEGAL METADATA ── */}
-        <div className="border-t border-[#4C7D75]/70 mt-14 pt-8 flex flex-col sm:items-end items-center gap-2.5">
-          {/* Copyright Address */}
-          <p className="text-[12px] sm:text-[12.5px] text-[#FAF8F5]/80 text-center sm:text-right font-normal">
-            {footerData.copyright}
-          </p>
-
-          {/* Legal Links Row with Vertical Dividers */}
-          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-2.5 gap-y-1 text-[12px] sm:text-[12.5px] text-[#FAF8F5]/80">
-            {footerData.legal.map((item, idx) => (
-              <span key={item.label} className="inline-flex items-center gap-2.5">
-                <a
-                  href={item.href}
-                  className="hover:text-white hover:underline hover:underline-offset-2 transition-colors"
-                >
-                  {item.label}
-                </a>
-                {idx < footerData.legal.length - 1 && (
-                  <span aria-hidden="true" className="h-2.5 w-px bg-[#4C7D75]/70 inline-block" />
-                )}
-              </span>
-            ))}
+        {/* ── BOTTOM LEGAL BAR WITH DIVIDER LINE MATCHING ORIGINAL ── */}
+        <div className="border-t border-[#4CAF7D]/35 pt-6 mt-8 lg:mt-12">
+          <div className="flex flex-col lg:items-end gap-2">
+            <div className="text-[12px] sm:text-[13px] text-white text-center lg:text-right font-normal">
+              {footerData.copyright}
+            </div>
+            <div className="flex flex-row flex-wrap lg:flex-nowrap lg:items-center items-center justify-center lg:justify-end gap-2 lg:gap-0 text-[12px] sm:text-[12.5px] text-white/85">
+              {footerData.legal.map((item, idx) => (
+                <span key={item.label} className="inline-flex items-center">
+                  <a
+                    href={item.href}
+                    className="hover:text-gray-300 transition-colors whitespace-nowrap"
+                  >
+                    {item.label}
+                  </a>
+                  {idx < footerData.legal.length - 1 && (
+                    <span
+                      aria-hidden="true"
+                      className="w-[1px] h-[10px] bg-[#4CAF7D] mx-2 hidden sm:inline-block"
+                    />
+                  )}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
