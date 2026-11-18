@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SmoothScroll from "@/components/effects/SmoothScroll";
+import ScrollProgress from "@/components/effects/ScrollProgress";
 
 export const metadata: Metadata = {
   title: "Abubakar Health — Root Cause Medicine",
@@ -22,7 +24,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SmoothScroll>
+          <ScrollProgress />
+          {children}
+        </SmoothScroll>
+      </body>
     </html>
   );
 }

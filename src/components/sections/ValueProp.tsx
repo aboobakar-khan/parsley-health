@@ -3,18 +3,20 @@
 import { motion } from "framer-motion";
 
 export default function ValueProp() {
+  const cubicEase = [0.23, 1, 0.32, 1] as const;
+
   return (
     <div className="bg-[#FAF8F5] text-[#132D2E]">
       {/* Part 1: Finally, a doctor who asks why */}
       <section className="py-20 lg:py-28 overflow-hidden border-b border-[#132D2E]/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
-            {/* Left: Copy */}
+            {/* Left: Copy with Staggered Entrance */}
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: cubicEase }}
               className="lg:col-span-6"
             >
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-light leading-[1.18] text-[#132D2E]">
@@ -24,28 +26,31 @@ export default function ValueProp() {
                 Proactive care from clinicians who are trained to uncover the root cause of complex conditions. Resolve your symptoms and start feeling like the best version of yourself again.
               </p>
               <div className="mt-8">
-                <a
+                <motion.a
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.18 }}
                   href="/join/care"
-                  className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-medium text-white shadow-sm hover:bg-[#1B3340]"
+                  className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-medium text-white shadow-md hover:bg-[#1B3340] transition-colors"
                 >
                   Join today
-                </a>
+                </motion.a>
               </div>
             </motion.div>
 
-            {/* Right: Real Editorial Photo */}
+            {/* Right: Real Editorial Photo with Depth Elevation */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, scale: 0.97, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, delay: 0.1, ease: cubicEase }}
               className="lg:col-span-6"
             >
-              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-md aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-xl aspect-[4/3] group">
                 <img
                   src="https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2Fbae37b8d24f04a8c8ee69e30bf16bec2?width=1080&quality=80&format=webp"
                   alt="Doctor consulting with patient at Abubakar Health"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
             </motion.div>
@@ -59,27 +64,27 @@ export default function ValueProp() {
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-12 lg:items-center">
             {/* Left: Real Editorial Photo */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.98 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, scale: 0.97, y: 30 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.8, delay: 0.1, ease: cubicEase }}
               className="lg:col-span-6 order-2 lg:order-1"
             >
-              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-md aspect-[4/3]">
+              <div className="relative overflow-hidden rounded-3xl bg-[#EADEC8] shadow-xl aspect-[4/3] group">
                 <img
                   src="https://cdn-builder.parsleyhealth.com/api/v1/image/assets%2F996895949aaa465aa438b22f75b680b6%2F026cb3ecb4ba4d01ab84345692f5d680?width=1080&quality=80&format=webp"
                   alt="Patient reviewing healthcare benefits"
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 />
               </div>
             </motion.div>
 
             {/* Right: Copy */}
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 0.7, ease: cubicEase }}
               className="lg:col-span-6 order-1 lg:order-2"
             >
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[46px] font-light leading-[1.18] text-[#132D2E]">
@@ -92,15 +97,18 @@ export default function ValueProp() {
                 No five-figure program fees, no long wait times. See a clinician within days, from the comfort of your own space.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-6">
-                <a
+                <motion.a
+                  whileHover={{ y: -2, scale: 1.01 }}
+                  whileTap={{ scale: 0.98 }}
+                  transition={{ duration: 0.18 }}
                   href="/join/care?focus=insurance&entry=insurance-module"
-                  className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-medium text-white shadow-sm hover:bg-[#1B3340]"
+                  className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-medium text-white shadow-md hover:bg-[#1B3340] transition-colors"
                 >
                   Check eligibility
-                </a>
+                </motion.a>
                 <a
                   href="/insurance"
-                  className="text-sm font-medium text-[#132D2E] underline underline-offset-8 hover:text-[#1B3340]"
+                  className="text-sm font-medium text-[#132D2E] underline underline-offset-8 hover:text-[#1B3340] transition-colors"
                 >
                   Learn more about insurance →
                 </a>

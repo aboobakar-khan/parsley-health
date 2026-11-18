@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Check, X, ArrowRight, Play } from "lucide-react";
+import CountUp from "@/components/effects/CountUp";
 
 export default function Outcomes() {
   const memberStories = [
@@ -89,7 +90,7 @@ export default function Outcomes() {
                 REAL RESULTS
               </p>
               <h2 className="font-serif text-3xl sm:text-4xl lg:text-[40px] font-light leading-[1.18] text-[#132D2E]">
-                89% of Abubakar Health members improve or eliminate symptoms within a year
+                <CountUp to={89} suffix="%" className="font-medium text-[#132D2E]" /> of Abubakar Health members improve or eliminate symptoms within a year
               </h2>
             </div>
 
