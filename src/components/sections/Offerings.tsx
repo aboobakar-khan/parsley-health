@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import MagneticButton from "@/components/effects/MagneticButton";
+import KineticHeading from "@/components/effects/KineticHeading";
 
 export default function Offerings() {
   const [activeCard, setActiveCard] = useState<number>(0);
@@ -22,9 +24,11 @@ export default function Offerings() {
           <p className="text-xs font-semibold tracking-widest uppercase text-[#FAF8F5]/80 font-sans">
             Experience the Abubakar Health Difference
           </p>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-tight text-[#FAF8F5]">
-            Two ways to get started
-          </h2>
+          <KineticHeading
+            as="h2"
+            lines={["Two ways to get started"]}
+            className="font-serif text-3xl sm:text-4xl lg:text-[44px] font-light leading-tight text-[#FAF8F5]"
+          />
         </div>
 
         {/* Desktop Interactive Expanding Accordion Cards (xl:flex) */}
@@ -153,15 +157,24 @@ export default function Offerings() {
                       12-month membership commitment
                     </p>
                   )}
-                  <a
-                    href="/join/care"
-                    onClick={(e) => activeCard !== 0 && e.stopPropagation()}
-                    className={`mt-5 inline-flex items-center justify-center rounded-full bg-[#132D2E] py-3.5 text-sm font-medium text-white shadow-sm hover:bg-[#1B3340] transition-all ${
-                      activeCard === 0 ? "px-10" : "w-full px-6"
-                    }`}
-                  >
-                    Join now
-                  </a>
+                  <div className="mt-5 w-full">
+                    <MagneticButton
+                      as="a"
+                      href="/join/care"
+                      onClick={(e: React.MouseEvent<HTMLElement>) => {
+                        if (activeCard !== 0) e.stopPropagation();
+                      }}
+                      className={activeCard === 0 ? "rounded-full" : "w-full rounded-full"}
+                    >
+                      <span
+                        className={`inline-flex items-center justify-center rounded-full bg-[#132D2E] py-3.5 text-sm font-medium text-white shadow-sm hover:bg-[#1B3340] transition-all cursor-pointer ${
+                          activeCard === 0 ? "px-10" : "w-full px-6"
+                        }`}
+                      >
+                        Join now
+                      </span>
+                    </MagneticButton>
+                  </div>
                 </div>
 
                 {/* Description when Expanded */}
@@ -269,15 +282,24 @@ export default function Offerings() {
                   <p className="mt-1 font-sans text-xs text-[#132D2E]/60 leading-relaxed">
                     $250 credit will be applied to Complete Care membership if you sign up post-visit
                   </p>
-                  <a
-                    href="/join/labs"
-                    onClick={(e) => activeCard !== 1 && e.stopPropagation()}
-                    className={`mt-5 inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] py-3.5 text-sm font-medium text-[#132D2E] hover:bg-[#132D2E] hover:text-white transition-all ${
-                      activeCard === 1 ? "px-10" : "w-full px-6"
-                    }`}
-                  >
-                    Review your labs
-                  </a>
+                  <div className="mt-5 w-full">
+                    <MagneticButton
+                      as="a"
+                      href="/join/labs"
+                      onClick={(e: React.MouseEvent<HTMLElement>) => {
+                        if (activeCard !== 1) e.stopPropagation();
+                      }}
+                      className={activeCard === 1 ? "rounded-full" : "w-full rounded-full"}
+                    >
+                      <span
+                        className={`inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] py-3.5 text-sm font-medium text-[#132D2E] hover:bg-[#132D2E] hover:text-white transition-all cursor-pointer ${
+                          activeCard === 1 ? "px-10" : "w-full px-6"
+                        }`}
+                      >
+                        Review your labs
+                      </span>
+                    </MagneticButton>
+                  </div>
                 </div>
 
                 {/* Description when Expanded (smoothly visible at right bottom) */}

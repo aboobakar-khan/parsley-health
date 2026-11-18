@@ -3,6 +3,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Check } from "lucide-react";
+import MagneticButton from "@/components/effects/MagneticButton";
+import KineticHeading from "@/components/effects/KineticHeading";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -87,14 +89,14 @@ export default function Hero() {
           </motion.div>
 
           {/* Kinetic Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 22 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: cubicEase }}
+          <KineticHeading
+            as="h1"
+            lines={[
+              "Medical care that uncovers",
+              "the root cause of your symptoms",
+            ]}
             className="font-serif text-4xl sm:text-5xl lg:text-[58px] font-light leading-[1.12] text-[#132D2E] tracking-tight"
-          >
-            Medical care that uncovers the root cause of your symptoms
-          </motion.h1>
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 18 }}
@@ -105,32 +107,32 @@ export default function Hero() {
             Work with a board-certified functional medicine clinician, nutrition coach, and dedicated care team focused on root cause care, so you can feel better and stay well. Now accepting insurance nationwide.
           </motion.p>
 
-          {/* Action Buttons with Spring Micro-Interactions */}
+          {/* Action Buttons with Magnetic Pointer Physics */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35, ease: cubicEase }}
             className="mt-8 flex flex-wrap items-center gap-4"
           >
-            <motion.a
-              whileHover={{ y: -2, scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.18 }}
+            <MagneticButton
+              as="a"
               href="/join/care?focus=insurance&entry=home-hero-primary"
-              className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-medium text-white shadow-md hover:bg-[#1B3340] active:scale-95 transition-colors cursor-pointer"
+              className="rounded-full"
             >
-              Verify insurance
-            </motion.a>
+              <span className="inline-flex items-center justify-center rounded-full bg-[#132D2E] px-8 py-4 text-sm font-medium text-white shadow-md hover:bg-[#1B3340] active:scale-95 transition-colors cursor-pointer">
+                Verify insurance
+              </span>
+            </MagneticButton>
 
-            <motion.a
-              whileHover={{ y: -2, scale: 1.01 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.18 }}
+            <MagneticButton
+              as="a"
               href="/join/care?entry=home-hero-secondary"
-              className="inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] px-8 py-3.5 text-sm font-medium text-[#132D2E] bg-transparent hover:bg-[#132D2E] hover:text-white transition-colors cursor-pointer"
+              className="rounded-full"
             >
-              Join now
-            </motion.a>
+              <span className="inline-flex items-center justify-center rounded-full border-2 border-[#132D2E] px-8 py-3.5 text-sm font-medium text-[#132D2E] bg-transparent hover:bg-[#132D2E] hover:text-white transition-colors cursor-pointer">
+                Join now
+              </span>
+            </MagneticButton>
           </motion.div>
 
           {/* Feature Checkmarks Strip with Staggered Entrance */}

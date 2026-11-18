@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Check, X, ArrowRight, Play } from "lucide-react";
 import CountUp from "@/components/effects/CountUp";
+import MagneticButton from "@/components/effects/MagneticButton";
+import KineticHeading from "@/components/effects/KineticHeading";
 
 export default function Outcomes() {
   const memberStories = [
@@ -155,9 +157,14 @@ export default function Outcomes() {
             <p className="text-xs sm:text-[13px] font-semibold tracking-[0.2em] uppercase text-[#132D2E]/60 mb-3 sm:mb-4">
               HOW ABUBAKAR HEALTH COMPARES
             </p>
-            <h2 className="font-serif text-3xl sm:text-5xl lg:text-[58px] font-light leading-[1.15] text-[#132D2E] tracking-tight">
-              Get more out of medicine than<br className="hidden sm:inline" /> you ever thought possible
-            </h2>
+            <KineticHeading
+              as="h2"
+              lines={[
+                "Get more out of medicine than",
+                "you ever thought possible",
+              ]}
+              className="font-serif text-3xl sm:text-5xl lg:text-[58px] font-light leading-[1.15] text-[#132D2E] tracking-tight"
+            />
           </div>
 
           {/* ── MOBILE 3-COLUMN TABLE (Exact Match to User's Phone Screenshot cb8fbc3b.jpg) ── */}
@@ -331,15 +338,18 @@ export default function Outcomes() {
               </div>
             </div>
 
-            {/* Desktop Sticky Floating Button: Remains pinned while scrolling table */}
+            {/* Desktop Sticky Floating Button: Remains pinned while scrolling table with magnetic physics */}
             <div className="sticky bottom-8 z-30 flex justify-center pointer-events-none mt-6">
-              <a
+              <MagneticButton
+                as="a"
                 href="/join/care?focus=insurance"
-                className="pointer-events-auto inline-flex items-center gap-2 rounded-full bg-[#1E3B3A] hover:bg-[#132D2E] px-8 py-3.5 text-[15px] font-medium text-white shadow-xl hover:shadow-2xl transition-all"
+                className="pointer-events-auto rounded-full"
               >
-                <span>Verify insurance</span>
-                <ArrowRight className="h-4 w-4" />
-              </a>
+                <span className="inline-flex items-center gap-2 rounded-full bg-[#132D2E]/95 hover:bg-[#132D2E] text-white px-8 py-3.5 text-[15px] font-medium shadow-2xl hover:shadow-[0_20px_35px_rgba(19,45,46,0.35)] backdrop-blur-md border border-[#FAF8F5]/20 transition-all cursor-pointer">
+                  <span>Verify insurance</span>
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </MagneticButton>
             </div>
           </div>
         </div>

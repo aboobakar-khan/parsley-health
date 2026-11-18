@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 
 import Hero from "@/components/sections/Hero";
 import ValueProp from "@/components/sections/ValueProp";
+import TrajectoryLens from "@/components/effects/TrajectoryLens";
 import Offerings from "@/components/sections/Offerings";
 import Testimonials from "@/components/sections/Testimonials";
 import Conditions from "@/components/sections/Conditions";
@@ -20,6 +21,7 @@ export default function Home() {
       <main className="flex-grow">
         <Hero />
         <ValueProp />
+        <TrajectoryLens />
         <Offerings />
         <Testimonials />
         <Conditions />

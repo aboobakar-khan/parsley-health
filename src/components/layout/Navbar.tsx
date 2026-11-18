@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import navData from "@/data/nav.json";
+import MagneticButton from "@/components/effects/MagneticButton";
 import {
   ArrowRight,
   Menu,
@@ -132,12 +133,11 @@ export default function Navbar() {
 
           {/* Desktop Right CTAs: [Join now] button + [Log in ->] link */}
           <div className="hidden lg:flex items-center gap-5 xl:gap-6">
-            <a
-              href={navData.cta.join.href}
-              className="rounded-full bg-white text-[#132D2E] px-6 py-2.5 text-sm font-medium shadow-sm hover:bg-[#FAF8F5] transition-all whitespace-nowrap"
-            >
-              {navData.cta.join.label}
-            </a>
+            <MagneticButton as="a" href={navData.cta.join.href} className="rounded-full">
+              <span className="inline-block rounded-full bg-white text-[#132D2E] px-6 py-2.5 text-sm font-medium shadow-sm hover:bg-[#FAF8F5] transition-all whitespace-nowrap cursor-pointer">
+                {navData.cta.join.label}
+              </span>
+            </MagneticButton>
 
             <a
               href={navData.cta.login.href}
